@@ -1,14 +1,18 @@
-# Name of Project
+# PC Together
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+PC Together is an application for use with little to large amount of knowledge of building a personal computer. The user will be able login to create a build by choosing the parts they desire for their computer build and the application will compare essential information of the parts selected to identify if they are compatible for the build. 
 
 ## Built With
 
-List technologies and frameworks here
+- Passport
+- Mongoose
+- Node
+- AngularJS
+- Bootstrap
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone this repository and npm install on your machine for the node modules
 
 ### Prerequisites
 
@@ -49,7 +53,7 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
+* Ryan Kiang
 
 
 ## Acknowledgments
