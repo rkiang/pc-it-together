@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>PC Together</title>
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="vendors/bootstrap.css">
-        <!-- <link rel="stylesheet" href="vendors/bootstrap.css.map"> -->
-        <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
-        <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
-        <script type="text/javascript" src="scripts/client.js"></script>
-        <script type="text/javascript" src="scripts/controllers/info.controller.js"></script>
-        <script type="text/javascript" src="scripts/controllers/login.controller.js"></script>
-        <script type="text/javascript" src="scripts/controllers/user.controller.js"></script>
-        <script type="text/javascript" src="scripts/services/user.service.js"></script>
-    </head>
+<head>
+    <title>PC Together</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendors/bootstrap.css">
+    <!-- <link rel="stylesheet" href="vendors/bootstrap.css.map"> -->
+    <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <script type="text/javascript" src="scripts/controllers/info.controller.js"></script>
+    <script type="text/javascript" src="scripts/controllers/login.controller.js"></script>
+    <script type="text/javascript" src="scripts/controllers/user.controller.js"></script>
+    <script type="text/javascript" src="scripts/services/user.service.js"></script>
+</head>
 
-    <body ng-app="myApp">
-      <header ng-include="'/views/partials/header.html'"></header>
+<body ng-app="myApp">
+    <div class="jumbotron text-center">
+        <header ng-include="'/views/partials/header.html'"></header>
 
-      <main ng-view></main>
+        <main ng-view></main>
+    </div>
+</body>
 
-    </body>
 </html>

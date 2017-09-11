@@ -1,0 +1,45 @@
+<h1>Create</h1>
+<form ng-submit="cc.newBuild(cc.userService)">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" ng-model="cc.user.name" />
+    </div>
+    <div class="form-group">
+        <label for="cpu">CPU:</label>
+        <input type="text" ng-model="cc.user.cpu" />
+    </div>
+    <div class="form-group">
+        <label for="mobo">Motherboard:</label>
+        <input type="text" ng-model="cc.user.mobo" />
+    </div>
+    <div class="form-group">
+        <label for="ram">RAM:</label>
+        <input type="text" ng-model="cc.user.ram" />
+    </div>
+    <div class="form-group">
+        <label for="fan">CPU Fan:</label>
+        <input type="text" ng-model="cc.user.fan" />
+    </div>
+    <div class="form-group">
+        <label for="psu">Power Supply:</label>
+        <input type="text" ng-model="cc.user.psu" />
+    </div>
+    <div class="form-group">
+        <label for="gpu">Grapics Card:</label>
+        <input type="text" ng-model="cc.user.gpu" />
+    </div>
+    <div class="form-group">
+        <label for="sound">Sound Card:</label>
+        <input type="text" ng-model="cc.user.sound" />
+    </div>
+    <div class="form-group">
+        <label for="case">Case:</label>
+        <input type="text" ng-model="cc.user.case" />
+    </div>
+    <div class="form-group">
+        <label for="storage">Storage Drives:</label>
+        <input type="text" ng-model="cc.user.storage" />
+    </div>
+    <button class="btn-success">Save</button>
+    <button class="btn-danger">Cancel</button>
+</form>

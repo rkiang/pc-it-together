@@ -6,6 +6,10 @@ myApp.controller('LoginController', function($http, $location, UserService) {
       password: ''
     };
     vm.message = '';
+    // vm.getBuilds = function(){
+    //   UserService.getBuilds();
+    // };
+    // vm.getBuilds();
 
     vm.login = function() {
       console.log('LoginController -- login');

@@ -21,6 +21,10 @@ myApp.config(function($routeProvider, $locationProvider) {
       templateUrl: '/views/templates/others.html',
       controller: 'UserController as uc'
     })
+    .when('/create', {
+      templateUrl: '/views/templates/create.html',
+      controller: 'CreateController as cc'
+    })
     .when('/user', {
       templateUrl: '/views/templates/user.html',
       controller: 'UserController as uc',
