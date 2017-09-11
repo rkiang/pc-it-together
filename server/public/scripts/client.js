@@ -15,15 +15,30 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/builds', {
       templateUrl: '/views/templates/builds.html',
-      controller: 'UserController as uc'
+      controller: 'UserController as uc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/others', {
       templateUrl: '/views/templates/others.html',
-      controller: 'UserController as uc'
+      controller: 'UserController as uc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/create', {
       templateUrl: '/views/templates/create.html',
-      controller: 'CreateController as cc'
+      controller: 'CreateController as cc',
+      resolve: {
+        getuser : function(UserService){
+          return UserService.getuser();
+        }
+      }
     })
     .when('/user', {
       templateUrl: '/views/templates/user.html',
