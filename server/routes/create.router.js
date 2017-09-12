@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var path = require('path');
-var newBuild = require('../models/create.js');
+var NewBuild = require('../models/create.js');
 
 router.post('/', function (req, res) {
     console.log('post route data is : ', req.body);
-    var newBuild = new newBuild(req.body);
+    var newBuild = new NewBuild(req.body);
     newBuild.save(function (err, data) {
         if (err) {
             console.log('update error: ', err);

@@ -4,4 +4,8 @@ myApp.controller('UserController', function(UserService) {
   vm.userService = UserService;
   vm.userObject = UserService.userObject;
   UserService.getBuilds();
+
+    vm.newBuild = function (newBuild) {
+      UserService.createBuild(newBuild);
+    }
 });
