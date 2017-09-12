@@ -4,8 +4,17 @@
     <a href="#/others" class="btn btn-default">See Others</a>
 </div>
 <h1>My builds</h1>
-{{uc}}
-{{uc.buildsArray.buildsArray[0]}}
+<!-- {{uc}} -->
+<div ng-repeat="build in uc.userService.buildsArray.buildsArray">
+    <!-- {{{uc.userService.buildsArray.buildsArray[0].cpu}}} -->
+    <p>{{build.name}}</p>
+    <p>{{build.cpu}}</p>
+    <p>{{build.mobo}}</p>
+    <p>{{build.ram}}</p>
+    <p>{{build.fan}}</p>
+    <p>{{build.gpu}}</p>
+    <p>{{build.psu}}</p>
+</div>
 <footer>
     <a href="#/create" class="btn btn-default">Create New Build</a>
 </footer>
