@@ -1,47 +1,52 @@
 <div ng-include="'views/partials/nav.html'"></div>
+<div class="btn-group">
+    <a href="#/builds" class="btn btn-default active">My Builds</a>
+    <a href="#/others" class="btn btn-default">See Others</a>
+</div>
 <h1>Create</h1>
-<form ng-submit="uc.newBuild(uc.UserService.userObject.buildsArray.buildsArray)">
-    {{uc.UserService.userObject.buildsArray.buildsArray}}
+<form ng-submit="cc.newBuild(cc.UserService.userObject.buildsArray.buildsArray)">
+    
+    {{cc.userService.userObject.userName}}
     <div>
         <label for="name">Name:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.name" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.name" />
     </div>
     <div>
         <label for="cpu">CPU:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.cpu" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu" />
     </div>
     <div>
         <label for="mobo">Motherboard:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.mobo" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo" />
     </div>
     <div>
         <label for="ram">RAM:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.ram" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.ram" />
     </div>
     <div>
         <label for="fan">CPU Fan:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.fan" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan" />
     </div>
     <div>
         <label for="psu">Power Supply:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.psu" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.psu" />
     </div>
     <div>
         <label for="gpu">Grapics Card:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.gpu" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.gpu" />
     </div>
     <div>
         <label for="sound">Sound Card:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.sound" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.sound" />
     </div>
     <div>
         <label for="case">Case:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.case" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.case" />
     </div>
     <div>
         <label for="storage">Storage Drives:</label>
-        <input type="text" ng-model="uc.UserService.userObject.buildsArray.buildsArray.storage" />
+        <input type="text" ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage" />
     </div>
-    <button class="btn-success" value="Add">Save</button>
+    <button class="btn-scccess" value="Add">Save</button>
     <!-- <button class="btn-danger">Cancel</button> -->
 </form>
