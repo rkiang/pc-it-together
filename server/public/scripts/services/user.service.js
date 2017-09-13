@@ -45,8 +45,7 @@ myApp.service('UserService', function ($http, $location) {
     console.log('delete button was clicked');
     $http.delete('/builds/' + id).then(function (response) {
       self.getBuilds();
-    })
-    
+    });
   }
 
   self.getDetails = function (id) {

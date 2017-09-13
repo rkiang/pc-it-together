@@ -1,2 +1,18 @@
+<div ng-include="'views/partials/nav.html'"></div>
+<div class="btn-group">
+        <a href="#/builds" class="btn btn-default active">My Builds</a>
+        <a href="#/others" class="btn btn-default">See Others</a>
+    </div>
 <h1>Details</h1>
-{{dc.userService}}
+<div ng-repeat="detail in dc.currentDetails.details">
+    <p>{{detail.name}}</p>
+    <p>{{detail.cpu}}</p>
+    <p>{{detail.mobo}}</p>
+    <p>{{detail.fan}}</p>
+    <p>{{detail.ram}}</p>
+    <p>{{detail.gpu}}</p>
+    <p>{{detail.sound}}</p>
+    <p>{{detail.psu}}</p>
+    <p>{{detail.case}}</p>
+</div>
+<!-- {{dc.currentDetails.details}} -->

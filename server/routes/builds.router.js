@@ -47,7 +47,7 @@ router.delete('/:id', function (req, res) {
     }
 })
 
-router.get('/details', function (req, res) {
+router.get('/details/:id', function (req, res) {
     console.log('get builds.router: details was hit');
     if (req.isAuthenticated()) {
         var userInfo = {
