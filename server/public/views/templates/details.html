@@ -4,8 +4,8 @@
         <a href="#/others" class="btn btn-default">See Others</a>
     </div>
 <h1>Details</h1>
-<div ng-repeat="detail in dc.currentDetails.details">
-    <p>{{detail.name}}</p>
+<div ng-repeat="detail in dc.currentDetails">
+    <h2>{{detail.name}}</h2>
     <p>{{detail.cpu}}</p>
     <p>{{detail.mobo}}</p>
     <p>{{detail.fan}}</p>
@@ -15,4 +15,3 @@
     <p>{{detail.psu}}</p>
     <p>{{detail.case}}</p>
 </div>
-<!-- {{dc.currentDetails.details}} -->

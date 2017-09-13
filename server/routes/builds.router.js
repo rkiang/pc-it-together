@@ -48,12 +48,13 @@ router.delete('/:id', function (req, res) {
 })
 
 router.get('/details/:id', function (req, res) {
+    var id = req.params.id;
     console.log('get builds.router: details was hit');
     if (req.isAuthenticated()) {
         var userInfo = {
             username: req.user.username
         };
-        InfoSchema.find(userInfo, function (err, data) {
+        InfoSchema.findById(id, function (err, data) {
             if (err) {
                 console.log('find err', err);
                 res.sendStatus(500);
