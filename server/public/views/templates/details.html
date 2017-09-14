@@ -1,17 +1,97 @@
 <div ng-include="'views/partials/nav.html'"></div>
 <div class="btn-group">
-        <a href="#/builds" class="btn btn-default active">My Builds</a>
-        <a href="#/others" class="btn btn-default">See Others</a>
-    </div>
-<h1>Details</h1>
+    <a href="#/builds" class="btn btn-default active">My Builds</a>
+    <a href="#/others" class="btn btn-default">See Others</a>
+</div>
+<h1>Edit</h1>
 <div ng-repeat="detail in dc.currentDetails">
-    <h2>{{detail.name}}</h2>
-    <p>{{detail.cpu}}</p>
-    <p>{{detail.mobo}}</p>
-    <p>{{detail.fan}}</p>
-    <p>{{detail.ram}}</p>
-    <p>{{detail.gpu}}</p>
-    <p>{{detail.sound}}</p>
-    <p>{{detail.psu}}</p>
-    <p>{{detail.case}}</p>
+    <div layout="column" ng-cloak class="md-inline-form">
+        <form ng-submit="cc.editBuild(cc.UserService.userObject.buildsArray.buildsArray)">
+            <md-content layout-gt-sm="row" layout-padding>
+                <div>
+                    <md-input-container>
+                        <label>Title: {{detail.name}}</label>
+                        <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.name">
+                    </md-input-container>
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-media>
+                                <div class="md-media-sm card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button ng-click="dc.showPicker()">Change image</md-button>
+                        </md-card-actions>
+                    </md-card>
+                    <md-content layout-padding>
+                        <div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>CPU</placeholder>
+                                    <label>{{detail.cpu}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Motherboard</placeholder>
+                                    <label>{{detail.mobo}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>RAM</placeholder>
+                                    <label>{{detail.ram}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.ram">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>CPU Fan</placeholder>
+                                    <label>{{detail.fan}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Power Supply: </placeholder>
+                                    <label>{{detail.psu}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.psu">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Graphics Card</placeholder>
+                                    <label>{{detail.gpu}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.gpu">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Sound Card</placeholder>
+                                    <label>{{detail.sound}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.sound">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Case</placeholder>
+                                    <label>{{detail.case}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.case">
+                                </md-input-container>
+                            </div>
+                            <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs>
+                                    <placeholder>Storage</placeholder>
+                                    <label>{{detail.storage}}</label>
+                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage">
+                                </md-input-container>
+                            </div>
+                            <button class="btn-scccess" value="Add">Save</button>
+                        </div>
+                    </md-content>
+                </div>
+        </form>
+    </div>
 </div>

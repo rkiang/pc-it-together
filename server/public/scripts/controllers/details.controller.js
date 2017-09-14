@@ -3,4 +3,6 @@ myApp.controller('DetailsController',  ['UserService', '$routeParams', function 
     vm.currentDetails = UserService.currentDetails;
     console.log('$routeParams', $routeParams);
     UserService.getDetails($routeParams.id);
+
+    
 }]);

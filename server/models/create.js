@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 // Mongoose Schema
 var createSchema = new Schema({
     username: {type: String},
-    name: {type: String},
+    name: {type: String, required: true},
     cpu: {type: String},
     mobo: {type: String},
     ram: {type: String},
