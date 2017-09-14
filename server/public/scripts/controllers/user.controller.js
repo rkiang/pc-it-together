@@ -8,4 +8,7 @@ myApp.controller('UserController', function(UserService) {
   vm.deleteBuild = function(id) {
   UserService.deleteBuild(id)
   }
+  vm.putBuild = function (info) {
+    UserService.putBuild(info)
+};
 });

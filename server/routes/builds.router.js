@@ -69,8 +69,8 @@ router.get('/details/:id', function (req, res) {
     }
 })
 
-router.put('/details', function (req, res){
-    var id = req.body._id;
+router.put('/:id', function (req, res){
+    var id = req.body.id;
     var pc = {
         name: req.body.name,
         cpu: req.body.cpu,

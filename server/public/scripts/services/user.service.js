@@ -4,7 +4,7 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
   self.userObject = {};
   self.buildsObject = {};  
-  self.currentDetails = { details: {} };
+  // self.currentDetails = { details: {} };
 
   self.getuser = function () {
     console.log('UserService -- getuser');
@@ -48,18 +48,19 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.getDetails = function (id) {
-    $http.get('/builds/details/' + id).then(function (response) {
-      self.currentDetails.details = response.data;
-      console.log('get details successful: ', self.currentDetails.details);
-    });
-  }
+  // self.getDetails = function (id) {
+  //   $http.get('/builds/details/' + id).then(function (response) {
+  //     self.currentDetails.details = response.data;
+  //     console.log('get details successful: ', self.currentDetails.details);
+  //   });
+  // }
 
-  self.putDetails = function(id, info){
-    console.log('Edit was clicked:', id);
-    $http.put('/builds/details/' + id, {info}).then(function(response){
-      console.log('putDetails response:', response);
+  self.putBuild = function(info){
+    console.log('Edit was clicked:', info);
+    $http.put('/builds/',info).then(function(response){
+      console.log('putBuild response:', response);
     })
+    // self.getBuilds();
   }
 
   self.logout = function () {
