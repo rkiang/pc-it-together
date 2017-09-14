@@ -6,12 +6,12 @@
 <h1>Edit</h1>
 <div ng-repeat="detail in dc.currentDetails">
     <div layout="column" ng-cloak class="md-inline-form">
-        <form ng-submit="cc.editBuild(cc.UserService.userObject.buildsArray.buildsArray)">
+        <form ng-submit="dc.editBuild(dc.UserService.userObject.buildsArray.buildsArray)">
             <md-content layout-gt-sm="row" layout-padding>
                 <div>
                     <md-input-container>
                         <label>Title: {{detail.name}}</label>
-                        <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.name">
+                        <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.name">
                     </md-input-container>
                     <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
                         <md-card-title>
@@ -29,66 +29,66 @@
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>CPU</placeholder>
                                     <label>{{detail.cpu}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.cpu">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Motherboard</placeholder>
                                     <label>{{detail.mobo}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.mobo">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>RAM</placeholder>
                                     <label>{{detail.ram}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.ram">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.ram">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>CPU Fan</placeholder>
                                     <label>{{detail.fan}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.fan">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Power Supply: </placeholder>
                                     <label>{{detail.psu}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.psu">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.psu">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Graphics Card</placeholder>
                                     <label>{{detail.gpu}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.gpu">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.gpu">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Sound Card</placeholder>
                                     <label>{{detail.sound}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.sound">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.sound">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Case</placeholder>
                                     <label>{{detail.case}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.case">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.case">
                                 </md-input-container>
                             </div>
                             <div layout-gt-xs="row">
                                 <md-input-container class="md-block" flex-gt-xs>
                                     <placeholder>Storage</placeholder>
                                     <label>{{detail.storage}}</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage">
+                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.storage">
                                 </md-input-container>
                             </div>
-                            <button class="btn-scccess" value="Add">Save</button>
+                            <button class="btn-sdccess" value="Add">Save</button>
                         </div>
                     </md-content>
                 </div>

@@ -3,7 +3,7 @@ myApp.service('UserService', function ($http, $location) {
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = {};
+  self.buildsObject = {};  
   self.currentDetails = { details: {} };
 
   self.getuser = function () {
@@ -53,6 +53,13 @@ myApp.service('UserService', function ($http, $location) {
       self.currentDetails.details = response.data;
       console.log('get details successful: ', self.currentDetails.details);
     });
+  }
+
+  self.putDetails = function(id, info){
+    console.log('Edit was clicked:', id);
+    $http.put('/builds/details/' + id, {info}).then(function(response){
+      console.log('putDetails response:', response);
+    })
   }
 
   self.logout = function () {

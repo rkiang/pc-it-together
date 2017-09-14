@@ -4,5 +4,7 @@ myApp.controller('DetailsController',  ['UserService', '$routeParams', function 
     console.log('$routeParams', $routeParams);
     UserService.getDetails($routeParams.id);
 
-    
+    vm.editBuild = function (info) {
+        UserService.putDetails(info)
+    };
 }]);

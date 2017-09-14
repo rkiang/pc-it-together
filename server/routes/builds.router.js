@@ -68,4 +68,34 @@ router.get('/details/:id', function (req, res) {
         res.send(false);
     }
 })
+
+router.put('/details', function (req, res){
+    var id = req.body._id;
+    var pc = {
+        name: req.body.name,
+        cpu: req.body.cpu,
+        mobo: req.body.mobo,
+        fan: req.body.fan,
+        ram: req.body.ram,
+        psu: req.body.psu,
+        gpu: req.body.gpu,
+        sound: req.body.sound,
+        case: req.body.case,
+        storage: req.body.storage
+    }
+    console.log('router put was hit!');
+    InfoSchema.findByIdAndUpdate(
+        {_id: id},
+        { $set: { pc}},
+        function (err, data) {
+            if(err) {
+                console.log('update error is: ', err);
+                res.sendStatus(500);
+            } else {
+                res.sendStatus(200);
+            }
+        }
+    )
+    
+})
 module.exports = router;
