@@ -23,88 +23,69 @@
             </md-card> -->
             <md-content layout-padding>
                 <div>
-                    <!-- <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <label>CPU</label>
-                                    <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu">
-                                </md-input-container>
-                            </div> -->
-                    <div layout="row">
-                        <md-input-container>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs>
                             <label>CPU</label>
-                            <md-select ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu">
-                                <md-optgroup label="items">
-                                    <md-option ng-value="CPU" ng-repeat="cpu in cc.userService.parts" ng-if="cpu.type == 'cpu'">{{cpu.name}}</md-option>
-                                </md-optgroup>
-                            </md-select>
+                            <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.cpu"><option ng-repeat="cpu in cc.userService.parts" ng-if="cpu.type == 'cpu'">{{cpu.name}}</option></select>
                         </md-input-container>
                     </div>
-                    <!-- <div layout-gt-xs="row">
+
+                    <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Motherboard</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo">
-                        </md-input-container>
-                    </div> -->
-                    <div layout="row">
-                        <md-input-container>
-                            <label>Motherboard</label>
-                            <md-select ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo">
-                                <md-optgroup label="items">
-                                    <md-option ng-value="Motherboard" ng-repeat="mobo in cc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</md-option>
-                                </md-optgroup>
-                            </md-select>
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo"><option ng-repeat="mobo in cc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>RAM</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.ram">
-                        </md-input-container>
-                    </div>
-                    <!-- <div layout-gt-xs="row">
-                        <md-input-container class="md-block" flex-gt-xs>
-                            <label>CPU Fan</label>
-                            <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan">
-                        </md-input-container>
-                    </div> -->
-                    <div layout="row">
-                        <md-input-container>
-                            <label>CPU Fan</label>
-                            <md-select ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan">
-                                <md-optgroup label="items">
-                                    <md-option ng-value="CPUFan" ng-repeat="fan in cc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</md-option>
-                                </md-optgroup>
-                            </md-select>
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.ram"><option ng-repeat="ram in cc.userService.parts" ng-if="ram.type == 'ram'">{{ram.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
+                            <label>CPU Fan</label>
+                            <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan"><option ng-repeat="fan in cc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
+                        </md-input-container>
+                    </div>
+                    <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.fan"><option ng-repeat="fan in cc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
+                    <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs>
                             <label>Power Supply</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.psu">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.psu"><option ng-repeat="psu in cc.userService.parts" ng-if="psu.type == 'psu'">{{psu.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Graphics Card</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.gpu">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.gpu"><option ng-repeat="gpu in cc.userService.parts" ng-if="gpu.type == 'gpu'">{{gpu.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Sound Card</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.sound">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.sound"><option ng-repeat="sound in cc.userService.parts" ng-if="sound.type == 'sound'">{{sound.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Case</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.case">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.case"><option ng-repeat="case in cc.userService.parts" ng-if="case.type == 'case'">{{case.name}}</option></select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Storage</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage">
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo"><option ng-repeat="mobo in cc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</option></select>
                         </md-input-container>
                     </div>
                 </div>
@@ -113,8 +94,8 @@
                         <md-switch ng-model="cc.UserService.userObject.buildsArray.buildsArray.sharing">Sharing {{cc.UserService.userObject.buildsArray.buildsArray.sharing ? "Enabled" : "Disabled"}}</md-switch>
                     </md-input-container>
                 </div>
-                    <button class="btn-scccess" value="Add">Save</button>
-                </div>
-            </md-content>
+                <button class="btn-scccess" value="Add">Save</button>
+        </div>
+        </md-content>
         </div>
 </form>

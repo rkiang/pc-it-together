@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
 router.get('/others', function (req, res) {
     console.log('builds.router get was hit');
     // var userInfo = {
-    //     username: req.user.username
+    //     cpu: req.user.cpu
     // };
     InfoSchema.find(req.body, function (err, data) {
         if (err) {
@@ -69,7 +69,7 @@ router.get('/details/:id', function (req, res) {
     console.log('get builds.router: details was hit');
     if (req.isAuthenticated()) {
         var userInfo = {
-            username: req.user.username
+            cpu: req.user.cpu
         };
         InfoSchema.findById(id, function (err, data) {
             if (err) {
@@ -86,33 +86,34 @@ router.get('/details/:id', function (req, res) {
     }
 })
 
-router.put('/:id', function (req, res) {
-    var id = req.body.id;
-    var pc = {
-        name: req.body.name,
-        cpu: req.body.cpu,
-        mobo: req.body.mobo,
-        fan: req.body.fan,
-        ram: req.body.ram,
-        psu: req.body.psu,
-        gpu: req.body.gpu,
-        sound: req.body.sound,
-        case: req.body.case,
-        storage: req.body.storage
-    }
-    console.log('router put was hit!');
-    InfoSchema.findByIdAndUpdate(
-        { _id: id },
-        { $set: { pc } },
-        function (err, data) {
-            if (err) {
-                console.log('update error is: ', err);
-                res.sendStatus(500);
-            } else {
-                res.sendStatus(200);
-            }
-        }
-    )
 
-})
+router.put('/:id', function(req, res){
+    console.log('Update data is: ', req.body);
+    console.log('Update id is: ', req.params);
+    InfoSchema.findById(req.params.id, function(err, data){
+      if(err) {
+        throw err;
+      } else {
+        //if item is was changed, upfan it. If not, keep it the same
+        data.name = req.body.name || data.name;
+        data.cpu = req.body.cpu || data.cpu;
+        data.mobo = req.body.mobo || data.mobo;
+        data.fan = req.body.fan || data.fan;
+        data.ram = req.body.ram|| data.ram;
+        data.psu = req.body.psu || data.psu;
+        data.gpu = req.body.gpu || data.gpu;
+        data.sound = req.body.sound || data.sound;
+        data.case = req.body.case || data.case;
+        data.storage = req.body.storage || data.storage;
+        data.save(function (err) {
+          if(err) {
+            console.error('ERROR!');
+            res.sendStatus(500);
+          }else {
+            res.sendStatus(200);
+          }
+        });
+      }
+    }); // end findOne
+  }); // end of PUT Router
 module.exports = router;

@@ -18,84 +18,77 @@
             <p>{{build.fan}}</p>
             <p>{{build.gpu}}</p>
             <p>{{build.psu}}</p>
-            <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild">Edit</md-button>
+            <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild; uc.toggleUpdate(build) ">Edit</md-button>
             <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">Delete</md-button>
         </div>
         <div ng-show="editBuild">
-                <form ng-submit="uc.putBuild(uc.UserService.userObject.buildsArray.buildsArray)">
+                <form ng-model="uc.changeBuild">
+                    {{uc.changeBuild}}
+                        <!-- <form ng-submit="uc.putBuild(uc.UserService.buildPackage.changeBuild)"> -->
                         <md-content layout-gt-sm="row" layout-padding>
                             <div>
                                 <md-input-container>
                                     <label>Name</label>
-                                    <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.name">
+                                    <input ng-model="build.name">
                                 </md-input-container>
-                                <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                                    <md-card-title>
-                                        <md-card-title-media>
-                                            <div class="md-media-sm card-media"></div>
-                                        </md-card-title-media>
-                                    </md-card-title>
-                                    <!-- <md-card-actions layout="row" layout-align="end center">
-                                        <md-button ng-click="uc.showPicker()">add image</md-button>
-                                    </md-card-actions> -->
-                                </md-card>
                                 <md-content layout-padding>
                                     <div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>CPU</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.cpu">
+                                                <input ng-model="build.cpu">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Motherboard</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.mobo">
+                                                <input ng-model="build.mobo">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>RAM</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.ram">
+                                                <input ng-model="build.ram">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>CPU Fan</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.fan">
+                                                <input ng-model="build.fan">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Power Supply</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.psu">
+                                                <input ng-model="build.psu">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Graphics Card</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.gpu">
+                                                <input ng-model="build.gpu">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Sound Card</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.sound">
+                                                <input ng-model="build.sound">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Case</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.case">
+                                                <input ng-model="build.case">
                                             </md-input-container>
                                         </div>
                                         <div layout-gt-xs="row">
                                             <md-input-container class="md-block" flex-gt-xs>
                                                 <label>Storage</label>
-                                                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.storage">
+                                                <input ng-model="build.storage">
                                             </md-input-container>
                                         </div>
-                                        <button class="btn-success" value="Add">Save</button>
+                                    <button ng-click="uc.putBuild(uc.changeBuild._id, build)">Save</button>
+                                        <!-- <button class="btn-success" value="Add">Save</button> -->
                                     </div>
                                 </md-content>
                             </div>

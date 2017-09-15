@@ -4,6 +4,7 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
   self.userObject = {};
   self.buildsObject = {};  
+  self.buildPackage = {list: []};
   // self.currentDetails = { details: {} };
 
   self.getuser = function () {
@@ -48,7 +49,7 @@ myApp.service('UserService', function ($http, $location) {
   }
 
   self.deleteBuild = function (id) {
-    console.log('delete button was clicked');
+    console.log('delete button was clicked', id);
     $http.delete('/builds/' + id).then(function (response) {
       self.getBuilds();
     });
@@ -58,12 +59,14 @@ myApp.service('UserService', function ($http, $location) {
   //   $http.get('/builds/details/' + id).then(function (response) {
   //     self.currentDetails.details = response.data;
   //     console.log('get details successful: ', self.currentDetails.details);
+  //  $location.path(/build/details/+id)
   //   });
   // }
 
-  self.putBuild = function(info){
-    console.log('Edit was clicked:', info);
-    $http.put('/builds/',info).then(function(response){
+  self.putBuild = function(id, buildPackage){
+    console.log('Edit id is:', id);
+    console.log('Edit data is:', buildPackage);
+    $http.put('/builds/' + id, buildPackage).then(function(response){
       console.log('putBuild response:', response);
     })
     // self.getBuilds();

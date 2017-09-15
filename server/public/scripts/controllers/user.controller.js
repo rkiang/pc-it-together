@@ -10,7 +10,12 @@ myApp.controller('UserController', function(UserService) {
   vm.deleteBuild = function(id) {
   UserService.deleteBuild(id)
   }
-  vm.putBuild = function (info) {
-    UserService.putBuild(info)
+  vm.putBuild = function (info, build) {
+    UserService.putBuild(info, build)
 };
-});
+
+vm.toggleUpdate = function(build){
+  console.log(build); 
+  vm.changeBuild = build;
+}
+}); //end of controller
