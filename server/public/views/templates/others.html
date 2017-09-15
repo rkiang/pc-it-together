@@ -4,8 +4,8 @@
     <a href="#/others" class="btn btn-default active">See Others</a>
 </div>
 <h1>See Others</h1>
-
-<ul ng-repeat="build in uc.userService.buildsObject.buildsArray">
+<!-- {{uc.userService.otherBuilds}} -->
+<ul ng-repeat="build in uc.userService.otherBuilds">
     <div ng-if="build.sharing == true">
         <md-button class="md-raised md-primary " ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
         <div ng-show="showBuild">

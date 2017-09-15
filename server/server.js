@@ -14,7 +14,7 @@ var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 var createRouter = require('./routes/create.router');
 var buildsRouter = require('./routes/builds.router');
-var partsRouter = require('./routes/parts.router')
+var partsRouter = require('./routes/parts.router');
 
 var port = process.env.PORT || 5000;
 

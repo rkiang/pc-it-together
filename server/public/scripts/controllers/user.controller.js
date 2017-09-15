@@ -5,6 +5,7 @@ myApp.controller('UserController', function(UserService) {
   vm.userObject = UserService.userObject;
   UserService.getBuilds();
   UserService.getParts();
+  UserService.getOthers();
   
   vm.deleteBuild = function(id) {
   UserService.deleteBuild(id)

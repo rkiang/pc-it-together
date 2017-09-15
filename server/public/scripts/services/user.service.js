@@ -37,8 +37,14 @@ myApp.service('UserService', function ($http, $location) {
     $http.get('/builds').then(function (response) {
       self.buildsObject.buildsArray = response.data;
       console.log('get route successful: ', self.buildsObject.buildsArray);
-
     });
+  }
+
+  self.getOthers = function () {
+    $http.get('/builds/others').then(function(response) {
+      self.otherBuilds = response.data;
+      console.log('get others successful: ',self.otherBuilds);
+    })
   }
 
   self.deleteBuild = function (id) {

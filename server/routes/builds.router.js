@@ -23,6 +23,23 @@ router.get('/', function (req, res) {
     }
 })
 
+router.get('/others', function (req, res) {
+    console.log('builds.router get was hit');
+    // var userInfo = {
+    //     username: req.user.username
+    // };
+    InfoSchema.find(req.body, function (err, data) {
+        if (err) {
+            console.log('find err', err);
+            res.sendStatus(500);
+        } else {
+            console.log('found data', data)
+
+            res.send(data)
+        }
+    })
+})
+
 router.delete('/:id', function (req, res) {
     if (req.isAuthenticated()) {
         console.log('req.params.id', req.params.id);
@@ -69,7 +86,7 @@ router.get('/details/:id', function (req, res) {
     }
 })
 
-router.put('/:id', function (req, res){
+router.put('/:id', function (req, res) {
     var id = req.body.id;
     var pc = {
         name: req.body.name,
@@ -85,10 +102,10 @@ router.put('/:id', function (req, res){
     }
     console.log('router put was hit!');
     InfoSchema.findByIdAndUpdate(
-        {_id: id},
-        { $set: { pc}},
+        { _id: id },
+        { $set: { pc } },
         function (err, data) {
-            if(err) {
+            if (err) {
                 console.log('update error is: ', err);
                 res.sendStatus(500);
             } else {
@@ -96,6 +113,6 @@ router.put('/:id', function (req, res){
             }
         }
     )
-    
+
 })
 module.exports = router;
