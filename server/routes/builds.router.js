@@ -25,9 +25,6 @@ router.get('/', function (req, res) {
 
 router.get('/others', function (req, res) {
     console.log('builds.router get was hit');
-    // var userInfo = {
-    //     cpu: req.user.cpu
-    // };
     InfoSchema.find(req.body, function (err, data) {
         if (err) {
             console.log('find err', err);
@@ -69,7 +66,7 @@ router.get('/details/:id', function (req, res) {
     console.log('get builds.router: details was hit');
     if (req.isAuthenticated()) {
         var userInfo = {
-            cpu: req.user.cpu
+            username: req.user.username
         };
         InfoSchema.findById(id, function (err, data) {
             if (err) {

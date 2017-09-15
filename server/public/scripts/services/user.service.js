@@ -3,8 +3,8 @@ myApp.service('UserService', function ($http, $location) {
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = {};  
-  self.buildPackage = {list: []};
+  self.buildsObject = {};
+  self.buildPackage = { list: [] };
   // self.currentDetails = { details: {} };
 
   self.getuser = function () {
@@ -42,9 +42,9 @@ myApp.service('UserService', function ($http, $location) {
   }
 
   self.getOthers = function () {
-    $http.get('/builds/others').then(function(response) {
+    $http.get('/builds/others').then(function (response) {
       self.otherBuilds = response.data;
-      console.log('get others successful: ',self.otherBuilds);
+      console.log('get others successful: ', self.otherBuilds);
     })
   }
 
@@ -55,18 +55,18 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  // self.getDetails = function (id) {
-  //   $http.get('/builds/details/' + id).then(function (response) {
-  //     self.currentDetails.details = response.data;
-  //     console.log('get details successful: ', self.currentDetails.details);
-  //  $location.path(/build/details/+id)
-  //   });
-  // }
+  self.getDetails = function (id) {
+    $http.get('/builds/details/' + id).then(function (response) {
+      self.currentDetails = response.data;
+      console.log('get details successful: ', self.currentDetails);
+      $location.path('/build/details/' +id)
+    });
+  }
 
-  self.putBuild = function(id, buildPackage){
+  self.putBuild = function (id, buildPackage) {
     console.log('Edit id is:', id);
     console.log('Edit data is:', buildPackage);
-    $http.put('/builds/' + id, buildPackage).then(function(response){
+    $http.put('/builds/' + id, buildPackage).then(function (response) {
       console.log('putBuild response:', response);
     })
     // self.getBuilds();
@@ -80,9 +80,9 @@ myApp.service('UserService', function ($http, $location) {
     });
   };
 
-  self.getParts = function() {
+  self.getParts = function () {
     console.log('get parts was hit');
-    $http.get('/parts').then(function (response){
+    $http.get('/parts').then(function (response) {
       self.parts = response.data;
       console.log('getParts: ', self.parts);
     })

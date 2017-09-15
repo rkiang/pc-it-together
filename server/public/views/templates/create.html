@@ -85,7 +85,7 @@
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Storage</label>
                             <input ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage">
-                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.mobo"><option ng-repeat="mobo in cc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</option></select>
+                            <select ng-model="cc.UserService.userObject.buildsArray.buildsArray.storage"><option ng-repeat="storage in cc.userService.parts" ng-if="storage.type == 'storage'">{{storage.name}}</option></select>
                         </md-input-container>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         <md-switch ng-model="cc.UserService.userObject.buildsArray.buildsArray.sharing">Sharing {{cc.UserService.userObject.buildsArray.buildsArray.sharing ? "Enabled" : "Disabled"}}</md-switch>
                     </md-input-container>
                 </div>
-                <button class="btn-scccess" value="Add">Save</button>
+                <md-button class="md-primary md-raised" value="Add">Create</md-button>
         </div>
         </md-content>
         </div>

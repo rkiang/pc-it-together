@@ -3,8 +3,10 @@
     <a href="#/builds" class="btn btn-default active">My Builds</a>
     <a href="#/others" class="btn btn-default">See Others</a>
 </div>
+{{dc}}
 <h1>Edit</h1>
 <div ng-repeat="detail in dc.currentDetails">
+    <!-- {{detail}} -->
     <div layout="column" ng-cloak class="md-inline-form">
         <form ng-submit="dc.editBuild(dc.UserService.userObject.buildsArray.buildsArray)">
             <md-content layout-gt-sm="row" layout-padding>
