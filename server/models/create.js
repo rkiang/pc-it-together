@@ -13,7 +13,8 @@ var createSchema = new Schema({
     gpu: { type: String },
     sound: { type: String },
     case: { type: String },
-    storage: { type: String }
+    storage: { type: String },
+    sharing: {type: Boolean}
 },
     { collection: 'builds' }
 );
