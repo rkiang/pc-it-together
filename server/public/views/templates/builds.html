@@ -87,6 +87,11 @@
                                                 <input ng-model="build.storage">
                                             </md-input-container>
                                         </div>
+                                        <div>
+                                            <md-input-container>
+                                                <md-switch ng-model="build.sharing">Sharing {{build.sharing ? "Enabled" : "Disabled"}}</md-switch>
+                                            </md-input-container>
+                                        </div>
                                     <button ng-click="uc.putBuild(uc.changeBuild._id, build)">Save</button>
                                         <!-- <button class="btn-success" value="Add">Save</button> -->
                                     </div>

@@ -102,6 +102,7 @@ router.put('/:id', function(req, res){
         data.sound = req.body.sound || data.sound;
         data.case = req.body.case || data.case;
         data.storage = req.body.storage || data.storage;
+        data.sharing = req.body.sharing || data.sharing;
         data.save(function (err) {
           if(err) {
             console.error('ERROR!');
