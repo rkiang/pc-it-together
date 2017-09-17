@@ -1,4 +1,4 @@
-myApp.controller('UserController', function(UserService) {
+myApp.controller('UserController', function (UserService) {
   console.log('UserController created');
   var vm = this;
   vm.userService = UserService;
@@ -6,16 +6,19 @@ myApp.controller('UserController', function(UserService) {
   UserService.getBuilds();
   UserService.getParts();
   UserService.getOthers();
-  
-  vm.deleteBuild = function(id) {
-  UserService.deleteBuild(id)
+
+  vm.deleteBuild = function (id) {
+    UserService.deleteBuild(id)
   }
   vm.putBuild = function (info, build) {
     UserService.putBuild(info, build)
-};
+  };
 
-vm.toggleUpdate = function(build){
-  console.log(build); 
-  vm.changeBuild = build;
-}
+  vm.toggleUpdate = function (build) {
+    console.log(build);
+    vm.changeBuild = build;
+  }
+  vm.newBuild = function (newBuild) {
+    UserService.createBuild(newBuild);
+};
 }); //end of controller

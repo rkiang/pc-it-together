@@ -33,7 +33,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/create', {
       templateUrl: '/views/templates/create.html',
-      controller: 'CreateController as cc',
+      controller: 'UserController as uc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
