@@ -14,7 +14,6 @@ router.get('/', function (req, res) {
                 res.sendStatus(500);
             } else {
                 console.log('found data', data)
-
                 res.send(data)
             }
         })

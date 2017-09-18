@@ -3,7 +3,7 @@ myApp.service('UserService', function ($http, $location) {
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = { list: [] };
+  self.buildsObject = {list : {}};
   self.buildPackage = { list: [] };
   // self.currentDetails = { details: {} };
 

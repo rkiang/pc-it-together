@@ -5,14 +5,29 @@ var Schema = mongoose.Schema;
 var createSchema = new Schema({
     username: { type: String },
     name: { type: String, required: true },
-    cpu: { type: String },
-    mobo: { type: String },
-    ram: { type: String },
-    fan: { type: String },
+    cpu: { 
+        name: {type: String},
+        socket: {type: String}
+    },
+    mobo: { 
+        name: {type: String},
+        socket: {type: String}
+    },
+    ram: { 
+        name: {type: String},
+        socket: {type: String}
+    },
+    fan: { 
+        name: {type: String},
+        socket: {type: String}
+    },
     psu: { type: String },
     gpu: { type: String },
     sound: { type: String },
-    case: { type: String },
+    case: { 
+        name: {type: String},
+        socket: {type: String}
+    },
     storage: { type: String },
     sharing: {type: Boolean}
 },
