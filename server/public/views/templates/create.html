@@ -9,7 +9,7 @@
         <div>
             <md-input-container>
                 <label>Name</label>
-                <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.name">
+                <input ng-model="uc.UserService.userObject.name">
             </md-input-container>
             <!-- <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
                 <md-card-title>
@@ -23,79 +23,78 @@
             </md-card> -->
             <md-content layout-padding>
                 <div>
-                    <div layout-gt-xs="row">
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>CPU</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.cpu">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.cpu"><option ng-repeat="cpu in uc.userService.parts" ng-if="cpu.type == 'cpu'">{{cpu.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.cpu">
+                            <select ng-model="uc.UserService.userObject.cpu"><option ng-repeat="cpu in uc.userService.parts" ng-if="cpu.type == 'cpu'">{{cpu.name}} {{cpu.socket}}</option></select>
                         </md-input-container>
-                    </div>
-
-                    <div layout-gt-xs="row">
+                    <!-- </div> -->
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Motherboard</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.mobo">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.mobo"><option ng-repeat="mobo in uc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.mobo">
+                            <select ng-model="uc.UserService.userObject.mobo"><option ng-repeat="mobo in uc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}} {{mobo.socket}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div> -->
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>RAM</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.ram">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.ram"><option ng-repeat="ram in uc.userService.parts" ng-if="ram.type == 'ram'">{{ram.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.ram">
+                            <select ng-model="uc.UserService.userObject.ram"><option ng-repeat="ram in uc.userService.parts" ng-if="ram.type == 'ram'">{{ram.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div> -->
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>CPU Fan</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.fan">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.fan"><option ng-repeat="fan in uc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.fan">
+                            <select ng-model="uc.UserService.userObject.fan"><option ng-repeat="fan in uc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.fan"><option ng-repeat="fan in uc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
-                    <div layout-gt-xs="row">
+                    <!-- </div> -->
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Power Supply</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.psu">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.psu"><option ng-repeat="psu in uc.userService.parts" ng-if="psu.type == 'psu'">{{psu.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.psu">
+                            <select ng-model="uc.UserService.userObject.psu"><option ng-repeat="psu in uc.userService.parts" ng-if="psu.type == 'psu'">{{psu.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div> -->
+                    <!-- <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Graphics Card</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.gpu">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.gpu"><option ng-repeat="gpu in uc.userService.parts" ng-if="gpu.type == 'gpu'">{{gpu.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.gpu">
+                            <select ng-model="uc.UserService.userObject.gpu"><option ng-repeat="gpu in uc.userService.parts" ng-if="gpu.type == 'gpu'">{{gpu.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div>
+                    <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Sound Card</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.sound">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.sound"><option ng-repeat="sound in uc.userService.parts" ng-if="sound.type == 'sound'">{{sound.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.sound">
+                            <select ng-model="uc.UserService.userObject.sound"><option ng-repeat="sound in uc.userService.parts" ng-if="sound.type == 'sound'">{{sound.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div>
+                    <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Case</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.case">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.case"><option ng-repeat="case in uc.userService.parts" ng-if="case.type == 'case'">{{case.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.case">
+                            <select ng-model="uc.UserService.userObject.case"><option ng-repeat="case in uc.userService.parts" ng-if="case.type == 'case'">{{case.name}}</option></select>
                         </md-input-container>
-                    </div>
-                    <div layout-gt-xs="row">
+                    <!-- </div>
+                    <div layout-gt-xs="row"> -->
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Storage</label>
-                            <input ng-model="uc.UserService.userObject.buildsArray.buildsArray.storage">
-                            <select ng-model="uc.UserService.userObject.buildsArray.buildsArray.storage"><option ng-repeat="storage in uc.userService.parts" ng-if="storage.type == 'storage'">{{storage.name}}</option></select>
+                            <input ng-model="uc.UserService.userObject.storage">
+                            <select ng-model="uc.UserService.userObject.storage"><option ng-repeat="storage in uc.userService.parts" ng-if="storage.type == 'storage'">{{storage.name}}</option></select>
                         </md-input-container>
-                    </div>
+                    <!-- </div> -->
+                    {{mobo.name}}
                 </div>
-                <div>
-                    <md-input-container>
-                        <md-switch ng-model="uc.UserService.userObject.buildsArray.buildsArray.sharing">Sharing {{uc.UserService.userObject.buildsArray.buildsArray.sharing ? "Enabled" : "Disabled"}}</md-switch>
-                    </md-input-container>
-                </div>
-                <md-button class="md-primary md-raised" ng-click="uc.newBuild(uc.UserService.userObject.buildsArray.buildsArray)">Create</md-button>
+            </md-content>
+            <div>
+                <md-input-container>
+                    <md-switch ng-model="uc.UserService.userObject.sharing">Sharing {{uc.UserService.userObject.sharing ? "Enabled" : "Disabled"}}</md-switch>
+                </md-input-container>
+            </div>
+            <md-button class="md-primary md-raised" ng-click="uc.newBuild(uc.UserService.userObject)">Create</md-button>
         </div>
-        </md-content>
-        </div>
+    </md-content>
 </form>

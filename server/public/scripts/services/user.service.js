@@ -3,7 +3,7 @@ myApp.service('UserService', function ($http, $location) {
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = {};
+  self.buildsObject = { list: [] };
   self.buildPackage = { list: [] };
   // self.currentDetails = { details: {} };
 
@@ -36,8 +36,8 @@ myApp.service('UserService', function ($http, $location) {
 
   self.getBuilds = function () {
     $http.get('/builds').then(function (response) {
-      self.buildsObject.buildsArray = response.data;
-      console.log('get route successful: ', self.buildsObject.buildsArray);
+      self.buildsObject = response.data;
+      console.log('get route successful: ', self.buildsObject);
     });
   }
 
@@ -87,8 +87,4 @@ myApp.service('UserService', function ($http, $location) {
       // console.log('getParts: ', self.parts);
     })
   }
-  // return{
-  //   userObject : userObject,
-  //   buildsArray : buildsObject,
-  // }
 });
