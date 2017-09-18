@@ -15,14 +15,89 @@
                 <md-button class="md-raised md-primary " ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
             </div>
             <div ng-show="showBuild">
-                <p>{{build.cpu}}</p>
-                <p>{{build.mobo}}</p>
-                <p>{{build.ram}}</p>
-                <p>{{build.fan}}</p>
-                <p>{{build.gpu}}</p>
-                <p>{{build.psu}}</p>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>CPU</label>
+                                <div>{{build.cpu}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Motherboard</label>
+                                <div>{{build.mobo}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Ram</label>
+                                <div>{{build.ram}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>CPU Fan</label>
+                                <div>{{build.fan}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Graphics Card</label>
+                                <div>{{build.gpu}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Power Supply</label>
+                                <div>{{build.psu}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Sound Card</label>
+                                <div>{{build.sound}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+                <md-content>
+                    <md-list>
+                        <md-list-item>
+                            <div class="md-list-item-text">
+                                <label>Case</label>
+                                <div>{{build.case}}</div>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
                 <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild; uc.toggleUpdate(build); hideBuilds = ! hideBuilds ">Edit</md-button>
                 <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">Delete</md-button>
+
             </div>
         </div>
         <div ng-show="editBuild">
@@ -105,8 +180,8 @@
                                         <md-switch ng-model="build.sharing">Sharing {{build.sharing ? "Enabled" : "Disabled"}}</md-switch>
                                     </md-input-container>
                                 </div>
-                                <button ng-click="uc.putBuild(uc.changeBuild._id, build)">Save</button>
-                                <button ng-click="editBuild = ! editBuild; hideBuilds = ! hideBuilds">Cancel</button>
+                                <md-button class="md-raised" ng-click="uc.putBuild(uc.changeBuild._id, build)">Save</md-button>
+                                <md-button class="md-raised md-warn" ng-click="editBuild = ! editBuild; hideBuilds = ! hideBuilds">Cancel</md-button>
                             </div>
                         </md-content>
                     </div>

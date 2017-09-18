@@ -84,7 +84,7 @@ myApp.service('UserService', function ($http, $location) {
     console.log('get parts was hit');
     $http.get('/parts').then(function (response) {
       self.parts = response.data;
-      console.log('getParts: ', self.parts);
+      // console.log('getParts: ', self.parts);
     })
   }
   // return{

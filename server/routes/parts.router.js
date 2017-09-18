@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
             console.log('find err', err);
             res.sendStatus(500);
         } else {
-            console.log('found data', data)
+            // console.log('found data', data)
 
             res.send(data)
         };

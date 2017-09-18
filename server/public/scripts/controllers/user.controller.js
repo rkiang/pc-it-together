@@ -20,5 +20,5 @@ myApp.controller('UserController', function (UserService) {
   }
   vm.newBuild = function (newBuild) {
     UserService.createBuild(newBuild);
-};
+  };
 }); //end of controller
