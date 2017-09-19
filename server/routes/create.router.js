@@ -7,7 +7,13 @@ var NewBuild = require('../models/create.js');
 router.post('/', function (req, res) {
     console.log('post route data is : ', req.body);
     if (req.isAuthenticated()) {
-        var saveBuild = new NewBuild(req.body)
+        var buildObject = req.body;
+        buildObject.cpu = JSON.parse(buildObject.cpu);
+        buildObject.mobo = JSON.parse(buildObject.mobo);
+        buildObject.ram = JSON.parse(buildObject.ram);
+        // buildObject.case = JSON.parse(buildObject.case);
+        // buildObject.fan = JSON.parse(buildObject.fan);
+        var saveBuild = new NewBuild(buildObject)
         saveBuild.username = req.user.username;
         console.log('saveBuild.username is:', saveBuild.username);
         saveBuild.save(function (err, data) {

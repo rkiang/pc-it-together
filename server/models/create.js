@@ -26,7 +26,7 @@ var createSchema = new Schema({
     sound: { type: String },
     case: { 
         name: {type: String},
-        socket: {type: String}
+        form: {type: String}
     },
     storage: { type: String },
     sharing: {type: Boolean}
