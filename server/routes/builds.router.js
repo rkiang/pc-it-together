@@ -73,7 +73,6 @@ router.get('/details/:id', function (req, res) {
                 res.sendStatus(500);
             } else {
                 console.log('found data', data)
-
                 res.send(data)
             }
         })
@@ -83,14 +82,14 @@ router.get('/details/:id', function (req, res) {
 })
 
 
-router.put('/:id', function(req, res){
+router.put('/details/:id', function(req, res){
     console.log('Update data is: ', req.body);
     console.log('Update id is: ', req.params);
     InfoSchema.findById(req.params.id, function(err, data){
       if(err) {
         throw err;
       } else {
-        //if item is was changed, upfan it. If not, keep it the same
+        //if item is was changed, update it. If not, keep it the same
         data.name = req.body.name || data.name;
         data.cpu = req.body.cpu || data.cpu;
         data.mobo = req.body.mobo || data.mobo;

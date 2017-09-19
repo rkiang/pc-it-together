@@ -3,97 +3,91 @@
     <a href="#/builds" class="btn btn-default active">My Builds</a>
     <a href="#/others" class="btn btn-default">See Others</a>
 </div>
-{{dc}}
+{{uc}}
 <h1>Edit</h1>
-<div ng-repeat="detail in dc.currentDetails">
-    <!-- {{detail}} -->
-    <div layout="column" ng-cloak class="md-inline-form">
-        <form ng-submit="dc.editBuild(dc.UserService.userObject.buildsArray.buildsArray)">
-            <md-content layout-gt-sm="row" layout-padding>
-                <div>
-                    <md-input-container>
-                        <label>{{detail.name}}</label>
-                        <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.name">
-                    </md-input-container>
-                    <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
-                        <md-card-title>
-                            <md-card-title-media>
-                                <div class="md-media-sm card-media"></div>
-                            </md-card-title-media>
-                        </md-card-title>
-                        <md-card-actions layout="row" layout-align="end center">
-                            <md-button ng-click="dc.showPicker()">Change image</md-button>
-                        </md-card-actions>
-                    </md-card>
-                    <md-content layout-padding>
-                        <div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>CPU</placeholder>
-                                    <label>{{detail.cpu}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.cpu">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Motherboard</placeholder>
-                                    <label>{{detail.mobo}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.mobo">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>RAM</placeholder>
-                                    <label>{{detail.ram}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.ram">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>CPU Fan</placeholder>
-                                    <label>{{detail.fan}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.fan">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Power Supply: </placeholder>
-                                    <label>{{detail.psu}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.psu">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Graphics Card</placeholder>
-                                    <label>{{detail.gpu}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.gpu">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Sound Card</placeholder>
-                                    <label>{{detail.sound}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.sound">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Case</placeholder>
-                                    <label>{{detail.case}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.case">
-                                </md-input-container>
-                            </div>
-                            <div layout-gt-xs="row">
-                                <md-input-container class="md-block" flex-gt-xs>
-                                    <placeholder>Storage</placeholder>
-                                    <label>{{detail.storage}}</label>
-                                    <input ng-model="dc.UserService.userObject.buildsArray.buildsArray.storage">
-                                </md-input-container>
-                            </div>
-                            <button class="btn-sdccess" value="Add">Save</button>
+<div ng-repeat="build in uc.currentDetails">
+    <!-- <form ng-model="uc.changeBuild"> -->
+        <md-content layout-gt-sm="row" layout-padding>
+            <div>
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="build.name">
+                </md-input-container>
+                <md-content layout-padding>
+                    <div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>CPU</label>
+                                <input ng-model="build.cpu">
+                                <select ng-model="build.cpu"><option ng-repeat="cpu in uc.userService.parts" ng-if="cpu.type == 'cpu'">{{cpu.name}}</option></select>
+                            </md-input-container>
                         </div>
-                    </md-content>
-                </div>
-        </form>
-    </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Motherboard</label>
+                                <input ng-model="build.mobo">
+                                <select ng-model="build.mobo"><option ng-repeat="mobo in uc.userService.parts" ng-if="mobo.type == 'mobo'">{{mobo.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>RAM</label>
+                                <input ng-model="build.ram">
+                                <select ng-model="build.ram"><option ng-repeat="ram in uc.userService.parts" ng-if="ram.type == 'ram'">{{ram.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>CPU Fan</label>
+                                <input ng-model="build.fan">
+                                <select ng-model="build.fan"><option ng-repeat="fan in uc.userService.parts" ng-if="fan.type == 'fan'">{{fan.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Power Supply</label>
+                                <input ng-model="build.psu">
+                                <select ng-model="build.psu"><option ng-repeat="psu in uc.userService.parts" ng-if="psu.type == 'psu'">{{psu.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Graphics Card</label>
+                                <input ng-model="build.gpu">
+                                <select ng-model="build.gpu"><option ng-repeat="gpu in uc.userService.parts" ng-if="gpu.type == 'gpu'">{{gpu.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Sound Card</label>
+                                <input ng-model="build.sound">
+                                <select ng-model="build.sound"><option ng-repeat="sound in uc.userService.parts" ng-if="sound.type == 'sound'">{{sound.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Case</label>
+                                <input ng-model="build.case">
+                                <select ng-model="build.case"><option ng-repeat="case in uc.userService.parts" ng-if="case.type == 'case'">{{case.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <md-input-container class="md-block" flex-gt-xs>
+                                <label>Storage</label>
+                                <input ng-model="build.storage">
+                                <select ng-model="build.storage"><option ng-repeat="storage in uc.userService.parts" ng-if="storage.type == 'storage'">{{storage.name}}</option></select>
+                            </md-input-container>
+                        </div>
+                        <div>
+                            <md-input-container>
+                                <md-switch ng-model="build.sharing">Sharing {{build.sharing ? "Enabled" : "Disabled"}}</md-switch>
+                            </md-input-container>
+                        </div>
+                        <md-button class="md-raised" ng-click="uc.putBuild(build._id, build)">Save</md-button>
+                        <!-- <md-button class="md-raised md-warn" ng-click="editBuild = ! editBuild; hideBuilds = ! hideBuilds">Cancel</md-button> -->
+                    </div>
+                </md-content>
+            </div>
+        </md-content>
+    <!-- </form> -->
 </div>

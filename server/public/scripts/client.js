@@ -60,7 +60,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/details/:id', {
       templateUrl: 'views/templates/details.html',
-      controller: 'DetailsController as dc'
+      controller: 'DetailsController as uc'
     })
     .otherwise({
       redirectTo: 'home'

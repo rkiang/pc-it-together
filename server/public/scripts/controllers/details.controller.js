@@ -1,10 +1,12 @@
-myApp.controller('DetailsController',  ['UserService', '$routeParams', '$location', function (UserService, $routeParams, $location) {
+myApp.controller('DetailsController', ['UserService', '$routeParams', '$location', function (UserService, $routeParams, $location) {
     var vm = this;
     vm.currentDetails = UserService.currentDetails;
     console.log('$routeParams', $routeParams);
     UserService.getDetails($routeParams);
+    UserService.getParts();
 
-    // vm.editBuild = function (info) {
-    //     UserService.putDetails(info)
-    // };
+    vm.putBuild = function (info, build) {
+        UserService.putBuild(info, build)
+        // $location.path('/builds')
+    };
 }]);

@@ -14,13 +14,14 @@
     <a href="#/others" class="btn btn-default">See Others</a>
 </div> -->
 <h1>My builds</h1>
-{{uc.userService.buildsObject[0].cpu}}
+<!-- {{uc.userService.buildsObject[0].cpu}} -->
 <ul ng-repeat="build in uc.userService.buildsObject">
     <li>
-        <div ng-hide="hideBuilds">
-            <div>
+        <md-button class="md-raised" ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
+        <!-- <div ng-hide="hideBuilds"> -->
+            <!-- <div>
                 <md-button class="md-raised md-primary " ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
-            </div>
+            </div> -->
             <div ng-show="showBuild">
                 <md-content>
                     <md-list>
@@ -29,7 +30,7 @@
                                 <label>CPU</label>
                                 <div>{{build.cpu.name}}</div>
                             </div>
-                            {{build.cpu.socket}} {{build.mobo.socket}}
+                            <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
                             <h1 ng-show="{{build.cpu.socket}} =! {{build.mobo.socket}}"> Incompatible</h1>
                         </md-list-item>
                     </md-list>
@@ -104,15 +105,14 @@
                         </md-list-item>
                     </md-list>
                 </md-content>
-                <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild; uc.toggleUpdate(build); hideBuilds = ! hideBuilds ">Edit</md-button>
+                <!-- <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild; uc.toggleUpdate(build); hideBuilds = ! hideBuilds ">Edit</md-button> -->
+                <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}">Edit</md-button>
                 <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">Delete</md-button>
 
             </div>
-        </div>
-        <div ng-show="editBuild">
+        <!-- </div> -->
+        <!-- <div ng-show="editBuild">
             <form ng-model="uc.changeBuild">
-                <!-- {{uc.changeBuild}} -->
-                <!-- <form ng-submit="uc.putBuild(uc.UserService.buildPackage.changeBuild)"> -->
                 <md-content layout-gt-sm="row" layout-padding>
                     <div>
                         <md-input-container>
@@ -196,9 +196,9 @@
                     </div>
                 </md-content>
             </form>
-        </div>
+        </div> -->
     </li>
 </ul>
 <footer>
-    <md-button class="md-button md-raised"><a href="#/create">Create New Build</a></md-button>
+    <md-button class="md-abled md-raised"><a href="#/create">Create New Build</a></md-button>
 </footer>
