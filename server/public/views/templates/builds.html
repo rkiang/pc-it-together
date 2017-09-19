@@ -29,6 +29,8 @@
                                 <label>CPU</label>
                                 <div>{{build.cpu.name}}</div>
                             </div>
+                            {{build.cpu.socket}} {{build.mobo.socket}}
+                            <h1 ng-show="{{build.cpu.socket}} =! {{build.mobo.socket}}"> Incompatible</h1>
                         </md-list-item>
                     </md-list>
                 </md-content>

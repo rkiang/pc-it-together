@@ -21,4 +21,12 @@ myApp.controller('UserController', function (UserService) {
   vm.newBuild = function (newBuild) {
     UserService.createBuild(newBuild);
   };
+  vm.client = filestack.init('AGElhNVJSfurmgFbIEvmkz');
+  vm.showPicker = function() {
+      vm.client.pick({
+      }).then(function(result) {
+      vm.userObject.img = result.filesUploaded[0].url;
+          console.log(JSON.stringify(result.filesUploaded))
+      });
+  }
 }); //end of controller
