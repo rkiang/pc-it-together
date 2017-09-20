@@ -14,7 +14,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
     vm.login = function() {
       console.log('LoginController -- login');
       if(vm.user.username === '' || vm.user.password === '') {
-        vm.message = "Enter your username and password!";
+        vm.message = "Please enter your username and password correctly";
       } else {
         console.log('LoginController -- login -- sending to server...', vm.user);
         $http.post('/', vm.user).then(function(response) {
@@ -24,11 +24,11 @@ myApp.controller('LoginController', function($http, $location, UserService) {
             $location.path('/builds'); // http://localhost:5000/#/builds
           } else {
             console.log('LoginController -- login -- failure: ', response);
-            vm.message = "Wrong!!";
+            vm.message = "Incorrect Username/Password Entered, Try Again";
           }
         }).catch(function(response){
           console.log('LoginController -- registerUser -- failure: ', response);
-          vm.message = "Wrong!!";
+          vm.message = "Incorrect Username/Password Entered, Try Again";
         });
       }
     };
