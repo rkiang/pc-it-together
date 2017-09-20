@@ -3,10 +3,10 @@ myApp.service('UserService', function ($http) {
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = {list : {}};
+  self.buildsObject = { list : {} };
   self.buildPackage = { list: [] };
   self.currentDetails = { details: {} };
-  self.parts = {};
+  self.parts = { list: [] };
 
   self.getuser = function () {
     console.log('UserService -- getuser');
@@ -86,7 +86,7 @@ myApp.service('UserService', function ($http) {
   self.getParts = function () {
     console.log('get parts was hit');
     $http.get('/parts').then(function (response) {
-      self.parts = response.data;
+      self.parts.list = response.data;
       console.log('getParts: ', self.parts);
     })
   }

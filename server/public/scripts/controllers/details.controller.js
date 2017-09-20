@@ -3,10 +3,11 @@ myApp.controller('DetailsController', ['UserService', '$routeParams', '$location
     vm.currentDetails = UserService.currentDetails;
     console.log('$routeParams', $routeParams);
     UserService.getDetails($routeParams);
+    
     UserService.getParts();
-
+    vm.parts = UserService.parts;
     vm.putBuild = function (info, build) {
         UserService.putBuild(info, build)
-        // $location.path('/builds')
+        $location.path('/builds')
     };
 }]);
