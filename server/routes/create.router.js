@@ -10,9 +10,9 @@ router.post('/', function (req, res) {
         var buildObject = req.body;
         buildObject.cpu = JSON.parse(buildObject.cpu);
         buildObject.mobo = JSON.parse(buildObject.mobo);
-        // buildObject.ram = JSON.parse(buildObject.ram);
-        // buildObject.case = JSON.parse(buildObject.case);
-        // buildObject.fan = JSON.parse(buildObject.fan);
+        buildObject.ram = JSON.parse(buildObject.ram);
+        buildObject.case = JSON.parse(buildObject.case);
+        buildObject.fan = JSON.parse(buildObject.fan);
         var saveBuild = new NewBuild(buildObject)
         saveBuild.username = req.user.username;
         console.log('saveBuild.username is:', saveBuild.username);

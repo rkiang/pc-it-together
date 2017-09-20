@@ -87,8 +87,8 @@
                     <md-switch ng-model="uc.UserService.userObject.sharing">Sharing {{uc.UserService.userObject.sharing ? "Enabled" : "Disabled"}}</md-switch>
                 </md-input-container>
             </div>
-            <md-button class="md-primary md-raised" ng-click="uc.newBuild(uc.UserService.userObject)">Create</md-button>
-            <md-button class="md-raised md-warn" ng-click="uc.cancelBuild()">Cancel</md-button>
+            <md-button class="md-primary md-raised" ng-href="#/builds" ng-click="uc.newBuild(uc.UserService.userObject)">Create</md-button>
+            <md-button class="md-raised md-warn" ng-href="#/builds">Cancel</md-button>
         </div>
     </md-content>
 <!-- </form> -->

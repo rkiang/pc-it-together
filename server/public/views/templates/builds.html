@@ -31,7 +31,6 @@
                                 <div>{{build.cpu.name}}</div>
                             </div>
                             <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
-                            <h1 ng-show="{{build.cpu.socket}} =! {{build.mobo.socket}}"> Incompatible</h1>
                         </md-list-item>
                     </md-list>
                 </md-content>
@@ -43,6 +42,8 @@
                                 <div>{{build.mobo.name}}</div>
                             </div>
                         </md-list-item>
+                        <div class="incompatible" ng-show="{{build.cpu.socket}} =! {{build.mobo.socket}}"> 
+                            <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU({{build.cpu.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible</div>
                     </md-list>
                 </md-content>
                 <md-content>
@@ -50,9 +51,11 @@
                         <md-list-item>
                             <div class="md-list-item-text">
                                 <label>Ram</label>
-                                <div>{{build.ram}}</div>
+                                <div>{{build.ram.name}}</div>
                             </div>
                         </md-list-item>
+                        <div class="incompatible" ng-show="{{build.mobo.memory}} =! {{build.ram.socket}}"> 
+                            <md-icon class="material-icons" class="incompatible">warning</md-icon> RAM({{build.ram.socket}}) and Motherboard({{build.mobo.memory}}) are incompatible</div>
                     </md-list>
                 </md-content>
                 <md-content>
@@ -60,9 +63,12 @@
                         <md-list-item>
                             <div class="md-list-item-text">
                                 <label>CPU Fan</label>
-                                <div>{{build.fan}}</div>
+                                <div>{{build.fan.name}}</div>
                             </div>
                         </md-list-item>
+                        {{build.fan.socket}}  {{build.mobo.socket}}
+                        <div class="incompatible" ng-show="{{build.mobo.socket}} =! || == {{build.fan.socket}}"> 
+                            <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU Fan({{build.fan.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible</div>
                     </md-list>
                 </md-content>
                 <md-content>
@@ -100,14 +106,14 @@
                         <md-list-item>
                             <div class="md-list-item-text">
                                 <label>Case</label>
-                                <div>{{build.case}}</div>
+                                <div>{{build.case.name}}</div>
                             </div>
                         </md-list-item>
                     </md-list>
                 </md-content>
                 <!-- <md-button class="md-disabled md-raised" ng-click="editBuild = ! editBuild; uc.toggleUpdate(build); hideBuilds = ! hideBuilds ">Edit</md-button> -->
-                <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}">Edit</md-button>
-                <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">Delete</md-button>
+                <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}"> <md-icon class="material-icons">build</md-icon> Edit</md-button>
+                <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)"> <md-icon class="material-icons">delete</md-icon> Delete</md-button>
 
             </div>
         <!-- </div> -->

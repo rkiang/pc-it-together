@@ -11,7 +11,8 @@ var createSchema = new Schema({
     },
     mobo: { 
         name: {type: String},
-        socket: {type: String}
+        socket: {type: String},
+        memory: {type: String}
     },
     ram: { 
         name: {type: String},

@@ -31,6 +31,7 @@ myApp.service('UserService', function ($http, $location) {
     console.log('UserService function called', newBuild);
     $http.post('/create', newBuild).then(function (response) {
       console.log('Post route successful: ', response);
+      // $location.path("/build");
     });
   }
   self.cancelBuild = function () {

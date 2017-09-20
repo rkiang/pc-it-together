@@ -7,8 +7,8 @@ myApp.controller('CreateController', '$location', function (UserService, $locati
         $location.path('/builds')
     };
     vm.cancelBuild = function () {
-        UserService.cancelBuild()
-        $location.path('/builds')
+        // UserService.cancelBuild()
+        $location.path("/builds")
     };
     UserService.getParts();
 });

@@ -79,3 +79,7 @@ li a:hover {
   text-decoration: underline;
   color: #eee;
 }
+
+.material-icons, .incompatible{
+  color: #C94E4E;
+}
