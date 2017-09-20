@@ -84,7 +84,8 @@
                             <md-switch ng-model="build.sharing">Sharing {{build.sharing ? "Enabled" : "Disabled"}}</md-switch>
                         </md-input-container>
                     </div>
-                    <md-button class="md-raised" ng-click="uc.putBuild(build._id, build)">Save</md-button>
+                    <md-button class="md-raised md-primary" ng-click="uc.putBuild(build._id, build)">Save</md-button>
+                    <md-button class="md-raised md-warn" ng-click="uc.cancelBuild()">Cancel</md-button>
                     <!-- <md-button class="md-raised md-warn" ng-click="editBuild = ! editBuild; hideBuilds = ! hideBuilds">Cancel</md-button> -->
                 </div>
             </md-content>

@@ -1,9 +1,9 @@
-myApp.service('UserService', function ($http) {
+myApp.service('UserService', function ($http, $location) {
   console.log('UserService Loaded');
 
   var self = this;
   self.userObject = {};
-  self.buildsObject = { list : {} };
+  self.buildsObject = { list: {} };
   self.buildPackage = { list: [] };
   self.currentDetails = { details: {} };
   self.parts = { list: [] };
@@ -31,8 +31,10 @@ myApp.service('UserService', function ($http) {
     console.log('UserService function called', newBuild);
     $http.post('/create', newBuild).then(function (response) {
       console.log('Post route successful: ', response);
-
     });
+  }
+  self.cancelBuild = function () {
+    console.log('UserService cancel called');
   }
 
   self.getBuilds = function () {

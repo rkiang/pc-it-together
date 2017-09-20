@@ -10,4 +10,8 @@ myApp.controller('DetailsController', ['UserService', '$routeParams', '$location
         UserService.putBuild(info, build)
         $location.path('/builds')
     };
+    vm.cancelBuild = function () {
+        UserService.cancelBuild()
+        $location.path('/builds')
+    };
 }]);
