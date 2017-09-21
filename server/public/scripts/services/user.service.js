@@ -30,6 +30,13 @@ myApp.service('UserService', function ($http, $location) {
   self.createBuild = function (newBuild) {
     console.log('UserService function called', newBuild);
     $http.post('/create', newBuild).then(function (response) {
+      if(response) {
+      swal(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
+    }
       console.log('Post route successful: ', response);
       // $location.path("/build");
     });
