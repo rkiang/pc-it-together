@@ -32,8 +32,8 @@ myApp.service('UserService', function ($http, $location) {
     $http.post('/create', newBuild).then(function (response) {
       if(response) {
       swal(
-        'Good job!',
-        'You clicked the button!',
+        'Build Successfully Created',
+        'Click OK to return to My Builds',
         'success'
       )
     }

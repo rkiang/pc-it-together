@@ -20,7 +20,7 @@ var createSchema = new Schema({
     },
     fan: { 
         name: {type: String},
-        socket: {type: String}
+        socket: [{type: String}]
     },
     psu: { type: String },
     gpu: { type: String },

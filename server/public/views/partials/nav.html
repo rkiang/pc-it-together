@@ -1,28 +1,9 @@
-<!-- <div class="container"> -->
-    <img id="navLogo" src="/styles/PCitTogetherLogo.png">
-    <!-- <div id="logo">PC It </br>T<md-icon>power_settings_new</md-icon>gether</div> -->
-<!-- <md-content class="md-padding">
-  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" md-no-ink-bar="disableInkBar">
-    <md-nav-item md-nav-href="#/builds" name="builds">
-      My Builds
-    </md-nav-item>
-    <md-nav-item md-nav-href="#/others" name="others">
-      See Others
-    </md-nav-item>
-  </md-nav-bar>
-</md-content> -->
-<md-button id="navLogout" class="md-raised md-warn" ng-click="uc.userService.logout()">Log Out <md-icon class="material-icons">exit_to_app</md-icon></md-button>
-<!-- </div> -->
-<!-- <div class="navbar"> -->
-<!-- <div class="container"> -->
-<!-- <div class="btn-group">
-          <a href="#/builds" class="btn btn-default">My Builds</a>
-          <a href="#/others" class="btn btn-default">See Others</a>
-      </div> -->
-<!-- <button class="btn btn-danger" ng-click="uc.userService.logout()">Log Out</button> -->
-<!-- <ul>
-      <li><a href="#/user">User Home</a></li>
-      <li><a href="#/info">Info Page</a></li>
-    </ul> -->
-<!-- </div> -->
-<!-- </div> -->
+<header>
+    <div><span><img id="navLogo" src="/styles/PCitTogetherLogo.png"></span></div>
+    <md-button href="#/builds">My Builds</md-button>
+    <md-button href="#/others">See Others</md-button>
+    <md-button id="navLogout" class="md-raised md-warn" ng-click="uc.userService.logout()"> Log Out
+        <md-icon class="material-icons">exit_to_app</md-icon>
+    </md-button>
+</header>
+<!-- <div id="logo">PC It </br>T<md-icon>power_settings_new</md-icon>gether</div> -->

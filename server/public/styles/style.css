@@ -3,8 +3,8 @@ body, html {
   padding: 0;
   font-family: sans-serif;
   /* font-size: 14px; */
-  font-size: 20px;
-  /* background-color:#C1C5F3; */
+  font-size: 13px;
+  background-color: #DBD9D9;
 }
 
 .instructions .container h1 {
@@ -109,8 +109,8 @@ li a:hover {
 } */
 
 #navLogo {
-  display: block;
-  margin: auto;
+  display: inline-block;
+  /* margin: auto; */
   width: 40%;
 }
 
@@ -122,4 +122,31 @@ li a:hover {
 
 #navLogout {
   float: right;
+}
+
+#createButton {
+  display: block;
+  color: white;
+  background-color: #01A701;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+.buildLabel {
+  font-size: 11px;
+  color: dimgrey;
+  font-weight: bold;
+}
+.md-flex{
+  position:fixed;
+  width: 100%;
+  background-color: #3937D3
+}
+#homeLogo{
+  width: 75%;
+  margin: 0% 12%;
 }

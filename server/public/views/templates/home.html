@@ -1,24 +1,27 @@
-<div ng-include="'views/partials/header.html'"></div>
+<!-- <div ng-include="'views/partials/header.html'"></div> -->
 <div class="home">
+        <div><span><img id="homeLogo" src="/styles/PCitTogetherLogo.png"></span></div>
     <h1 class="lead">Login</h1>
     <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h1>
-        <form ng-submit="lc.login()">
-            <div>
-                <md-input-container class="md-block" flex-gt>
-                    <label for="username">Username</label>
-                    <input type="text" ng-model="lc.user.username" />
-                </md-input-container>
-            </div>
-            <div>
-                <md-input-container class="md-block" flex-gt>
-                    <label for="password">Password</label>
-                    <input type="password" ng-model="lc.user.password" />
-                </md-input-container>
-            </div>
-            <div>
-                <md-button id="login" class="md-raised md-primary" type="submit">Log In <md-icon class="material-icons">exit_to_app</md-icon></md-button>
-                <!-- <input class="btn btn-default" type="submit" name="submit" value="Log In" /> -->
-                <div class="homeRegister">Don't have an account?<a href="#register" class="btn btn-success">Sign Up</a></div>
-            </div>
-        </form>
+    <form ng-submit="lc.login()">
+        <div>
+            <md-input-container class="md-block" flex-gt>
+                <label for="username">Username</label>
+                <input type="text" ng-model="lc.user.username" />
+            </md-input-container>
+        </div>
+        <div>
+            <md-input-container class="md-block" flex-gt>
+                <label for="password">Password</label>
+                <input type="password" ng-model="lc.user.password" />
+            </md-input-container>
+        </div>
+        <div>
+            <md-button id="login" class="md-raised md-primary" type="submit">Log In
+                <md-icon class="material-icons">exit_to_app</md-icon>
+            </md-button>
+            <!-- <input class="btn btn-default" type="submit" name="submit" value="Log In" /> -->
+            <div class="homeRegister">Don't have an account?<a href="#register" class="btn btn-success">Sign Up</a></div>
+        </div>
+    </form>
 </div>

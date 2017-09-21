@@ -1,13 +1,9 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<md-button href="#/builds" md-no-ink class="md-primary md-raised">My Builds</md-button>
-<md-button href="#/others" ng-disabled="true" class="md-primary md-raised">See Others</md-button>
-<!-- <div class="btn-group">
-    <a href="#/builds" class="btn btn-default">My Builds</a>
-    <a href="#/others" class="btn btn-default active">See Others</a>
-</div> -->
-<h1>See Others</h1>
-<!-- {{uc.userService.otherBuilds}} -->
-<!-- <ul ng-repeat="build in uc.userService.otherBuilds">
+<!-- <md-button href="#/builds" md-no-ink class="md-primary md-raised">My Builds</md-button>
+<md-button href="#/others" ng-disabled="true" class="md-primary md-raised">See Others</md-button> -->
+    <h1>See Others</h1>
+    <!-- {{uc.userService.otherBuilds}} -->
+    <!-- <ul ng-repeat="build in uc.userService.otherBuilds">
     <div ng-if="build.sharing == true">
         <md-button class="md-raised md-primary " ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
         <div ng-show="showBuild">
@@ -20,93 +16,93 @@
         </div>
     </div>
 </ul> -->
-<ul ng-repeat="build in uc.userService.otherBuilds">
-    <div ng-if="build.sharing == true">
-        <li>
-            <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
-            <div ng-show="showBuild">
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>CPU</label>
-                                <div>{{build.cpu.name}}</div>
-                            </div>
-                            <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Motherboard</label>
-                                <div>{{build.mobo.name}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Ram</label>
-                                <div>{{build.ram.name}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>CPU Fan</label>
-                                <div>{{build.fan.name}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Graphics Card</label>
-                                <div>{{build.gpu}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Power Supply</label>
-                                <div>{{build.psu}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Sound Card</label>
-                                <div>{{build.sound}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-                <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label>Case</label>
-                                <div>{{build.case.name}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
-            </div>
-        </li>
-    </div>
-</ul>
+    <ul ng-repeat="build in uc.userService.otherBuilds">
+        <div ng-if="build.sharing == true">
+            <li>
+                <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
+                <div ng-show="showBuild">
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">CPU</label>
+                                    <div>{{build.cpu.name}}</div>
+                                </div>
+                                <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Motherboard</label>
+                                    <div>{{build.mobo.name}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Ram</label>
+                                    <div>{{build.ram.name}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">CPU Fan</label>
+                                    <div>{{build.fan.name}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Graphics Card</label>
+                                    <div>{{build.gpu}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Power Supply</label>
+                                    <div>{{build.psu}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Sound Card</label>
+                                    <div>{{build.sound}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                    <md-content>
+                        <md-list>
+                            <md-list-item>
+                                <div class="md-list-item-text">
+                                    <label class="buildLabel">Case</label>
+                                    <div>{{build.case.name}}</div>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+                    </md-content>
+                </div>
+            </li>
+        </div>
+    </ul>

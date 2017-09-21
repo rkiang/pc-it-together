@@ -38,7 +38,7 @@ myApp.controller('UserController', function (UserService) {
         )
       }
     })
-    
+
   }
   vm.putBuild = function (info, build) {
     UserService.putBuild(info, build)
@@ -52,11 +52,11 @@ myApp.controller('UserController', function (UserService) {
     UserService.createBuild(newBuild);
   };
   vm.client = filestack.init('AGElhNVJSfurmgFbIEvmkz');
-  vm.showPicker = function() {
-      vm.client.pick({
-      }).then(function(result) {
-      vm.userObject.img = result.filesUploaded[0].url;
-          console.log(JSON.stringify(result.filesUploaded))
-      });
+  vm.showPicker = function () {
+    vm.client.pick({
+    }).then(function (result) {
+      vm.userObject.img = result.filesUploaded;
+      console.log(JSON.stringify(result.filesUploaded))
+    });
   }
 }); //end of controller

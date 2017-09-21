@@ -13,6 +13,7 @@ router.post('/', function (req, res) {
         buildObject.ram = JSON.parse(buildObject.ram);
         buildObject.case = JSON.parse(buildObject.case);
         buildObject.fan = JSON.parse(buildObject.fan);
+        buildObject.fan.socket = buildObject.fan.socket.split(',');
         var saveBuild = new NewBuild(buildObject)
         saveBuild.username = req.user.username;
         console.log('saveBuild.username is:', saveBuild.username);
