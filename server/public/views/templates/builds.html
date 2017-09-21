@@ -47,7 +47,7 @@
                             <div>{{build.fan.name}}</div>
                         </div>
                     </md-list-item>
-                    <!-- {{build.fan.socket}} ||| {{build.mobo.socket}} -->
+                    <!-- {{build.fan.socket}} -->
                     <div class="incompatible" ng-show="uc.checkFanSocket(build.mobo.socket,build.fan.socket)">
                         <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU Fan ({{build.fan.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible</div>
                 </md-list>

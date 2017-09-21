@@ -59,4 +59,20 @@ myApp.controller('UserController', function (UserService) {
       console.log(JSON.stringify(result.filesUploaded))
     });
   }
+  vm.checkFanSocket = function (moboSocket, fanSocket) {
+    // console.log('moboSocket:', moboSocket);
+    // console.log('fanSocket:', fanSocket);
+
+    for (var i = 0; i < fanSocket ; i++) {
+      if (fanSocket == moboSocket) {
+
+        return fanSocket;
+        console.log('fanSocket:', fanSocket);
+        
+      // } else {
+      //   console.log('false');
+      //   return false;
+      }
+    }
+  }
 }); //end of controller

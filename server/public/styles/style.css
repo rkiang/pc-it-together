@@ -109,8 +109,8 @@ li a:hover {
 } */
 
 #navLogo {
-  display: inline-block;
-  /* margin: auto; */
+  display: block;
+  margin: auto;
   width: 40%;
 }
 
@@ -149,4 +149,8 @@ h1 {
 #homeLogo{
   width: 75%;
   margin: 0% 12%;
+}
+
+.navbar{
+  background-color: #5B73E7;
 }
