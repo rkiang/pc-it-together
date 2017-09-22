@@ -80,6 +80,13 @@ myApp.service('UserService', function ($http, $location) {
     console.log('Edit data is:', buildPackage);
     $http.put('/builds/details/' + id, buildPackage).then(function (response) {
       console.log('putBuild response:', response);
+      if(response) {
+        swal(
+          'Build Successfully Edited',
+          'Click OK to return to My Builds',
+          'success'
+        )
+      }
       // $location.path('/builds')
     })
     // self.getBuilds();

@@ -50,7 +50,7 @@
                     <!-- {{build.fan.socket}} -->
                     <div class="incompatible">
                         <!-- <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU Fan ({{build.fan.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible -->
-                    </div> 
+                    </div>
                 </md-list>
             </md-content>
             <md-content>
@@ -94,20 +94,20 @@
                 </md-list>
             </md-content>
             <md-content>
-                    <md-list>
-                        <md-list-item>
-                            <div class="md-list-item-text">
-                                <label class="buildLabel">Storage</label>
-                                <div>{{build.storage}}</div>
-                            </div>
-                        </md-list-item>
-                    </md-list>
-                </md-content>
+                <md-list>
+                    <md-list-item>
+                        <div class="md-list-item-text">
+                            <label class="buildLabel">Storage</label>
+                            <div>{{build.storage}}</div>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </md-content>
             <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}">
                 <md-icon class="material-icons">build</md-icon> Edit</md-button>
             <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">
                 <md-icon class="material-icons">delete</md-icon> Delete</md-button>
-        </div>
+            </div>
     </li>
 </ul>
 <footer>
