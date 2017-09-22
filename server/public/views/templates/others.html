@@ -18,8 +18,22 @@
 </ul> -->
 <ul ng-repeat="build in uc.userService.otherBuilds">
     <div ng-if="build.sharing == true">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{build.name}}</span>
+                    <span class="md-subhead"></span>
+                </md-card-title-text>
+                <md-card-title-media>
+                    <div class="md-media-lg card-media"><img ng-src="{{build.img}}"></div>
+                </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="column" layout-align="center center">
+                <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">Show Details</md-button>
+            </md-card-actions>
+        </md-card>
         <li>
-            <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">{{build.name}}</md-button>
+            <!-- <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">{{build.name}}</md-button> -->
             <div ng-show="showBuild">
                 <md-content>
                     <md-list>
