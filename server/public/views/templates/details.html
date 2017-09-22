@@ -9,6 +9,9 @@
                 <label>Name</label>
                 <input ng-model="build.name">
             </md-input-container>
+            <!-- <div>
+                <md-button layout-align="center end" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
+            </div> -->
             <md-content layout-padding>
                 <!-- {{uc.parts.list}} -->
                 <div>
@@ -82,8 +85,8 @@
                             <!-- <input ng-model="build.storage">
                             <select ng-model="build.storage"><option ng-repeat="storage in uc.parts.list" ng-if="storage.type == 'storage'">{{storage.name}}</option></select> -->
                             <md-select ng-model="build.storage" aria-label="psu">
-                                    <md-option ng-repeat="storage in uc.parts.list" ng-if="storage.type == 'storage'" value="{{storage.name}}">{{storage.name}}</md-option>
-                                </md-select>
+                                <md-option ng-repeat="storage in uc.parts.list" ng-if="storage.type == 'storage'" value="{{storage.name}}">{{storage.name}}</md-option>
+                            </md-select>
                         </md-input-container>
                     </div>
                     <div>

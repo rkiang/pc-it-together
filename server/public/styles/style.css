@@ -158,3 +158,9 @@ h1 {
 .detailsEdit {
   background-color: grey;
 }
+
+md-card {
+  width: 358px;
+  height: 180px;
+  background-color: #FFFFFF;
+}

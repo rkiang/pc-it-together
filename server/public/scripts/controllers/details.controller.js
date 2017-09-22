@@ -14,4 +14,15 @@ myApp.controller('DetailsController', ['UserService', '$routeParams', '$location
         UserService.cancelBuild()
         $location.path('/builds')
     };
+    vm.client = filestack.init('AGElhNVJSfurmgFbIEvmkz');
+    vm.showPicker = function () {
+      vm.client.pick({
+        accept: 'image/*',
+        imageMax: [200, 200]
+      }).then(function (result) {
+        UserService.img = result.filesUploaded[0].url;
+        console.log(JSON.stringify(result.filesUploaded));
+        // swal("Image Successfully Uploaded");
+      });
+    }
 }]);
