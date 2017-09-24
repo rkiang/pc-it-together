@@ -3,21 +3,15 @@
 <h1>Edit</h1>
 <div ng-repeat="build in uc.currentDetails">
     <!-- <form ng-model="uc.changeBuild"> -->
-    <md-content layout-gt-sm="row" layout-padding>
+    <md-content layout-gt-sm="row" layout-padding> 
         <div>
             <md-input-container>
                 <label>Name</label>
                 <input ng-model="build.name">
             </md-input-container>
-            <!-- <div>
-                <md-button layout-align="center center" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
-                <img ng-src="{{build.img}}" width="200px"/>
-            </div> -->
-            <md-card class="detailsCard" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+            <md-card  md-colors="{background: 'blue-grey'}" class="detailsCard" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
                 <md-card-title>
-                    <!-- <md-card-title-media> -->
                         <div class="md-media-md card-media"><img ng-src="{{build.img}}" width="175px"/></div>
-                    <!-- </md-card-title-media> -->
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end">
                         <md-button layout-align="center end" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
