@@ -125,11 +125,17 @@ li a:hover {
 }
 
 #createButton {
-  display: block;
+  display: inline-block;
   color: white;
   background-color: #01A701;
   font-size: 20px;
   font-weight: bold;
+  margin-top: 6%;
+  float: right;
+}
+
+#myBuilds{
+  display: inline-block
 }
 
 h1 {
@@ -138,7 +144,7 @@ h1 {
 
 .buildLabel {
   font-size: 11px;
-  color: dimgrey;
+  color: #6E78A3;
   font-weight: bold;
 }
 .md-flex{
@@ -152,7 +158,7 @@ h1 {
 }
 
 .navbar{
-  background-color: #5B73E7;
+  background-color: #6E78A3;
 }
 
 .detailsEdit {
