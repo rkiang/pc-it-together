@@ -170,3 +170,8 @@ md-card {
   height: 180px;
   background-color: #FFFFFF;
 }
+
+.detailsCard {
+  width: 325px;
+  height: 200px;
+}

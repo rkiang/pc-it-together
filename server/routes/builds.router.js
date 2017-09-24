@@ -100,7 +100,7 @@ router.put('/details/:id', function(req, res){
         data.sound = req.body.sound || data.sound;
         data.case = req.body.case || data.case;
         data.storage = req.body.storage || data.storage;
-        data.sharing = req.body.sharing || data.sharing;
+        data.sharing = req.body.sharing;
         data.img = req.body.img || data.img;
         data.save(function (err) {
           if(err) {

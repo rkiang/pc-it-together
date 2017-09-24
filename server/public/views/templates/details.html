@@ -10,8 +10,19 @@
                 <input ng-model="build.name">
             </md-input-container>
             <!-- <div>
-                <md-button layout-align="center end" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
+                <md-button layout-align="center center" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
+                <img ng-src="{{build.img}}" width="200px"/>
             </div> -->
+            <md-card class="detailsCard" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+                <md-card-title>
+                    <!-- <md-card-title-media> -->
+                        <div class="md-media-md card-media"><img ng-src="{{build.img}}" width="175px"/></div>
+                    <!-- </md-card-title-media> -->
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end">
+                        <md-button layout-align="center end" class="md-raised md-primary" type="button" value="Upload" ng-click="uc.showPicker()">Change Image</md-button>
+                </md-card-actions>
+            </md-card>
             <md-content layout-padding>
                 <!-- {{uc.parts.list}} -->
                 <div>

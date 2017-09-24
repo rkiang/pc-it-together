@@ -30,7 +30,7 @@ var createSchema = new Schema({
         form: {type: String}
     },
     storage: { type: String },
-    sharing: {type: Boolean},
+    sharing: {type: Boolean, required: true},
     img : { }
 },
     { collection: 'builds' }

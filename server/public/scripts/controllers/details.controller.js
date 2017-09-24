@@ -17,10 +17,9 @@ myApp.controller('DetailsController', ['UserService', '$routeParams', '$location
     vm.client = filestack.init('AGElhNVJSfurmgFbIEvmkz');
     vm.showPicker = function () {
       vm.client.pick({
-        accept: 'image/*',
-        imageMax: [200, 200]
+        accept: 'image/*'
       }).then(function (result) {
-        UserService.img = result.filesUploaded[0].url;
+        vm.userObject.img = result.filesUploaded[0].url;
         console.log(JSON.stringify(result.filesUploaded));
         // swal("Image Successfully Uploaded");
       });
