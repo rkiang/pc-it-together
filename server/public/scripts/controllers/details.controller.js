@@ -1,5 +1,6 @@
 myApp.controller('DetailsController', ['UserService', '$routeParams', '$location', function (UserService, $routeParams, $location) {
     var vm = this;
+    vm.userService = UserService;
     vm.currentDetails = UserService.currentDetails;
     console.log('$routeParams', $routeParams);
     UserService.getDetails($routeParams);
