@@ -91,7 +91,7 @@ router.put('/details/:id', function(req, res){
       } else {
         //if item is was changed, update it. If not, keep it the same
         data.name = req.body.name || data.name;
-        data.cpu = req.body.cpu || data.cpu;
+        data.cpu = JSON.parse(req.body.cpu) || data.cpu;
         data.mobo = req.body.mobo || data.mobo;
         data.fan = req.body.fan || data.fan;
         data.ram = req.body.ram|| data.ram;

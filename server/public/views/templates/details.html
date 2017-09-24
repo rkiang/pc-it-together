@@ -23,16 +23,16 @@
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>CPU</label>
-                            <md-select ng-model="build.cpu.name" aria-label="cpu">
-                                <md-option ng-repeat="cpu in uc.parts.list" ng-if="cpu.type == 'cpu'" value="{{cpu.name}}">{{cpu.name}}</md-option>
+                            <md-select ng-model="build.cpu" aria-label="cpu">
+                                <md-option ng-repeat="cpu in uc.parts.list" ng-if="cpu.type == 'cpu'" value="{{cpu}}">{{cpu.name}}</md-option>
                             </md-select>
                         </md-input-container>
                     </div>
                     <div layout-gt-xs="row">
                         <md-input-container class="md-block" flex-gt-xs>
                             <label>Motherboard</label>
-                            <md-select ng-model="build.mobo.name" aria-label="mobo">
-                                <md-option ng-repeat="mobo in uc.parts.list" ng-if="mobo.type == 'mobo'" value="{{mobo.name}}">{{mobo.name}}</md-option>
+                            <md-select ng-model="build.mobo" aria-label="mobo">
+                                <md-option ng-repeat="mobo in uc.parts.list" ng-if="mobo.type == 'mobo'" value="{{mobo}}">{{mobo.name}}</md-option>
                             </md-select>
                         </md-input-container>
                     </div>
