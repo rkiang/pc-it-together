@@ -125,7 +125,7 @@ li a:hover {
 }
 
 #createButton {
-  display: inline-block;
+  /* display: inline-block; */
   color: white;
   background-color: #01A701;
   font-size: 20px;

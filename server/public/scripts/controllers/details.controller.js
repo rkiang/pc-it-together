@@ -19,7 +19,7 @@ myApp.controller('DetailsController', ['UserService', '$routeParams', '$location
       vm.client.pick({
         accept: 'image/*'
       }).then(function (result) {
-        vm.userObject.img = result.filesUploaded[0].url;
+        vm.currentDetails.details.img = result.filesUploaded[0].url;        
         console.log(JSON.stringify(result.filesUploaded));
         // swal("Image Successfully Uploaded");
       });
