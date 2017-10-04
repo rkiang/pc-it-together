@@ -18,6 +18,18 @@ var partsRouter = require('./routes/parts.router');
 
 var port = process.env.PORT || 5000;
 
+var databaseURI = '';
+// process.env.MONGODB_URI will only be defined if you are running on Heroku
+if(process.env.MONGODB_URI != undefined) {
+    // use the string value of the environment variable
+    databaseURI = process.env.MONGODB_URI;
+} else {
+    // use the local database server
+    databaseURI = 'mongodb://localhost:27017/pctogether';
+}
+
+mongoose.connect(databaseURI);
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
