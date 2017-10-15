@@ -29,10 +29,10 @@ Steps to get the development environment running.
 
 ## Screen Shot
 
-![alt tag] (server/assets/login.png)
-![alt tag] (server/assets/home.png)
-![alt tag] (server/assets/home2.png)
-![alt tag] (server/assets/create.png)
+![alt tag] (/assets/login.png)
+![alt tag] (/assets/home.png)
+![alt tag] (/assets/home2.png)
+![alt tag] (/assets/create.png)
 
 ## Documentation
 
