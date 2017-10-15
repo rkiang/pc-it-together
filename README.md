@@ -8,7 +8,9 @@ PC Together is an application for use with little to large amount of knowledge o
 - Mongoose
 - Node
 - AngularJS
-- Bootstrap
+- Angular Material
+- FileStack API
+- SweetAlerts 2
 
 ## Getting Started
 
@@ -19,7 +21,6 @@ Clone this repository and npm install on your machine for the node modules
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
 
 
 ### Installing
@@ -28,28 +29,32 @@ Steps to get the development environment running.
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+![alt tag] (server/assets/login.png)
+![alt tag] (server/assets/home.png)
+![alt tag] (server/assets/home2.png)
+![alt tag] (server/assets/create.png)
 
 ## Documentation
 
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+Link to a read-only version of your scope document or other relevant documentation.
+Scope of Project
+https://docs.google.com/document/d/1xgQCo4s1-G5Eil-Dl8O1pucyGFvsQb3i6Ly7XbdJYKk/edit?usp=sharing
 
 ### Completed Features
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [x] Passport Authentication
+- [x] Login, home, create view.
+- [x] CRUD
+- [x] FileStack API
+- [x] Deployed to Heroku
 
 ### Next Steps
 
 Features that you would like to add at some point in the future.
 
-- [ ] Feature c
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- [ ] Implement API for pricing
 
 ## Authors
 
@@ -58,4 +63,4 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Thank you to Prime Digital Academy for assisting me with this development.
