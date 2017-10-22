@@ -27,12 +27,12 @@ Link to software that is required to install the app (e.g. node).
 
 Steps to get the development environment running.
 
-## Screen Shot
+## Screenshots
 
-![alt tag](/assets/login.png =250x)
-![alt tag](/assets/home.png =250x)
-![alt tag](/assets/home2.png =250x)
-![alt tag](/assets/create.png =250x)
+![alt tag](/assets/login.png)
+![alt tag](/assets/home.png)
+![alt tag](/assets/home2.png)
+![alt tag](/assets/create.png)
 
 ## Documentation
 
