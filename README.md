@@ -1,6 +1,6 @@
-# PC Together
+# PC It Together
 
-PC Together is an application for use with little to large amount of knowledge of building a personal computer. The user will be able login to create a build by choosing the parts they desire for their computer build and the application will compare essential information of the parts selected to identify if they are compatible for the build. 
+PC It Together is an application for use with little to large amount of knowledge of building a personal computer. The user will be able login to create a build by choosing the parts they desire for their computer build and the application will compare essential information of the parts selected to identify if they are compatible for the build. 
 
 ## Built With
 
