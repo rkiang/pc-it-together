@@ -1,7 +1,7 @@
-<div ng-include="'views/partials/nav.html'"></div>
+<!-- <div ng-include="'views/partials/nav.html'"></div> -->
 <!-- <md-button href="#/builds" md-no-ink class="md-primary md-raised">My Builds</md-button>
 <md-button href="#/others" ng-disabled="true" class="md-primary md-raised">See Others</md-button> -->
-<h1>See Others</h1>
+<!-- <h1>See Others</h1> -->
 <!-- {{uc.userService.otherBuilds}} -->
 <!-- <ul ng-repeat="build in uc.userService.otherBuilds">
     <div ng-if="build.sharing == true">
@@ -18,7 +18,7 @@
 </ul> -->
 <ul ng-repeat="build in uc.userService.otherBuilds">
     <div ng-if="build.sharing == true">
-        <md-card>
+        <md-card class="noDetails">
             <md-card-title>
                 <md-card-title-text>
                     <span class="md-headline">{{build.name}}</span>
@@ -35,6 +35,7 @@
         <li>
             <!-- <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">{{build.name}}</md-button> -->
             <div ng-show="showBuild">
+                <md-card>
                 <md-content>
                     <md-list>
                         <md-list-item>
@@ -120,6 +121,7 @@
                         </md-list-item>
                     </md-list>
                 </md-content>
+            </md-card>
             </div>
         </li>
     </div>

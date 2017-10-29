@@ -1,130 +1,159 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<h1 id="myBuilds">My builds</h1>
-<md-button id="createButton" class="md-raised" href="#/create">Create New Build</md-button>
-<ul ng-repeat="build in uc.userService.buildsObject">
-    <li>
-        <!-- <md-button class="md-raised" ng-click="showBuild = ! showBuild">{{build.name}}</md-button> -->
-        <!-- <div ng-show="showBuild"> -->
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">{{build.name}}</span>
-                    <span class="md-subhead"></span>
-                </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-lg card-media"><img ng-src="{{build.img}}"></div>
-                </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="column" layout-align="center center">
-                <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">Details</md-button>
-            </md-card-actions>
-        </md-card>
-        <div ng-show="showBuild">
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">CPU</label>
-                            <div>{{build.cpu.name}}</div>
+
+<md-content>
+    <md-tabs md-dynamic-height md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}" md-border-bottom>
+        <md-tab label="My Builds">
+            <md-content class="md-padding">
+                <!-- <h1 class="md-display-2">Tab One</h1> -->
+                <!-- <h1 id="myBuilds">My builds</h1> -->
+                <md-button id="createButton" layout="row" layout-align="center center" class="md-raised" href="#/create">Create New Build</md-button>
+                <ul ng-repeat="build in uc.userService.buildsObject">
+                    <li>
+                        <!-- <md-button class="md-raised" ng-click="showBuild = ! showBuild">{{build.name}}</md-button> -->
+                        <!-- <div ng-show="showBuild"> -->
+                        <md-card class="noDetails">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">{{build.name}}</span>
+                                    <span class="md-subhead"></span>
+                                </md-card-title-text>
+                                <md-card-title-media>
+                                    <div class="md-media-lg card-media">
+                                        <img ng-src="{{build.img}}">
+                                    </div>
+                                </md-card-title-media>
+                            </md-card-title>
+                            <md-card-actions layout="column" layout-align="center center">
+                                <md-button class="md-raised md-primary" ng-click="showBuild = ! showBuild">Details</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </md-card>
+                        <div ng-show="showBuild">
+                            <md-card style="width: 350px;">
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">CPU</label>
+                                            <div>{{build.cpu.name}}</div>
+                                        </div>
+                                        <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Motherboard</label>
+                                            <div>{{build.mobo.name}}</div>
+                                        </div>
+                                    </md-list-item>
+                                    <div class="incompatible" ng-show="build.cpu.socket != build.mobo.socket">
+                                        <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU({{build.cpu.socket}}) and Motherboard({{build.mobo.socket}})
+                                        are incompatible</div>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Ram</label>
+                                            <div>{{build.ram.name}}</div>
+                                        </div>
+                                    </md-list-item>
+                                    <div class="incompatible" ng-show="build.mobo.memory != build.ram.socket">
+                                        <md-icon class="material-icons" class="incompatible">warning</md-icon> RAM({{build.ram.socket}}) and Motherboard({{build.mobo.memory}})
+                                        are incompatible</div>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">CPU Fan</label>
+                                            <div>{{build.fan.name}}</div>
+                                        </div>
+                                    </md-list-item>
+                                    <!-- {{build.fan.socket}} -->
+                                    <div class="incompatible">
+                                        <!-- <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU Fan ({{build.fan.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible -->
+                                    </div>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Graphics Card</label>
+                                            <div>{{build.gpu}}</div>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Power Supply</label>
+                                            <div>{{build.psu}}</div>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Sound Card</label>
+                                            <div>{{build.sound}}</div>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Case</label>
+                                            <div>{{build.case.name}}</div>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <md-content>
+                                <md-list>
+                                    <md-list-item>
+                                        <div class="md-list-item-text">
+                                            <label class="buildLabel">Storage</label>
+                                            <div>{{build.storage}}</div>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </md-content>
+                            <div layout-align="center center">
+                                <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}">
+                                    <md-icon class="material-icons">build</md-icon> Edit</md-button>
+                                <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">
+                                    <md-icon class="material-icons">delete</md-icon> Delete</md-button>
+                            </div>
+                        </md-card>
                         </div>
-                        <!-- {{build.cpu.socket}} {{build.mobo.socket}} -->
-                    </md-list-item>
-                </md-list>
+                    </li>
+                </ul>
             </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Motherboard</label>
-                            <div>{{build.mobo.name}}</div>
-                        </div>
-                    </md-list-item>
-                    <div class="incompatible" ng-show="build.cpu.socket != build.mobo.socket">
-                        <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU({{build.cpu.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible</div>
-                </md-list>
+            
+        </md-tab>
+        <md-tab label="See Others">
+            <md-content class="md-padding">
+                <!-- <h1 class="md-display-2">Tab Two</h1> -->
+                <div ng-include="'views/templates/others.html'"></div>
             </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Ram</label>
-                            <div>{{build.ram.name}}</div>
-                        </div>
-                    </md-list-item>
-                    <div class="incompatible" ng-show="build.mobo.memory != build.ram.socket">
-                        <md-icon class="material-icons" class="incompatible">warning</md-icon> RAM({{build.ram.socket}}) and Motherboard({{build.mobo.memory}}) are incompatible</div>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">CPU Fan</label>
-                            <div>{{build.fan.name}}</div>
-                        </div>
-                    </md-list-item>
-                    <!-- {{build.fan.socket}} -->
-                    <div class="incompatible">
-                        <!-- <md-icon class="material-icons" class="incompatible">warning</md-icon> CPU Fan ({{build.fan.socket}}) and Motherboard({{build.mobo.socket}}) are incompatible -->
-                    </div>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Graphics Card</label>
-                            <div>{{build.gpu}}</div>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Power Supply</label>
-                            <div>{{build.psu}}</div>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Sound Card</label>
-                            <div>{{build.sound}}</div>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Case</label>
-                            <div>{{build.case.name}}</div>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </md-content>
-            <md-content>
-                <md-list>
-                    <md-list-item>
-                        <div class="md-list-item-text">
-                            <label class="buildLabel">Storage</label>
-                            <div>{{build.storage}}</div>
-                        </div>
-                    </md-list-item>
-                </md-list>
-            </md-content>
-            <div layout-align="center center">
-                <md-button class="md-raised md-primary" ng-href="/#/details/{{build._id}}">
-                    <md-icon class="material-icons">build</md-icon> Edit</md-button>
-                <md-button class="md-warn md-raised" ng-click="uc.deleteBuild(build._id)">
-                    <md-icon class="material-icons">delete</md-icon> Delete</md-button>
-            </div>
-        </div>
-    </li>
-</ul>
+        </md-tab>
+        <md-tab>
+            <md-button style="margin-top: -3%; margin: 0% -8%;" id="navLogout" class="md-raised md-warn" ng-click="uc.userService.logout()"> Logout
+                <md-icon class="material-icons">exit_to_app</md-icon>
+            </md-button>
+        </md-tab>
+    </md-tabs>
+</md-content>
