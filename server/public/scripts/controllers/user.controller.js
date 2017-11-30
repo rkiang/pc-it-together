@@ -58,7 +58,7 @@ myApp.controller('UserController', function (UserService) {
     }).then(function (result) {
       vm.UserService.userObject.img = result.filesUploaded[0].url;
       console.log(JSON.stringify(result.filesUploaded));
-      // swal("Image Successfully Uploaded");
+      swal("Image Successfully Uploaded");
     });
   }
 
