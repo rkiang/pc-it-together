@@ -1,4 +1,4 @@
-myApp.service('UserService', function ($http, $location) {
+myApp.service('UserService', function ($http, $location, $mdDialog) {
   console.log('UserService Loaded');
 
   var self = this;
@@ -31,10 +31,14 @@ myApp.service('UserService', function ($http, $location) {
     console.log('UserService function called', newBuild);
     $http.post('/create', newBuild).then(function (response) {
       if(response) {
-      swal(
-        'Build Successfully Created',
-        'Click OK to return to My Builds',
-        'success'
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.querySelector('#popupContainer')))
+          .clickOutsideToClose(true)
+          .title('Build Successfully Created')
+          .ariaLabel('Alert Dialog Demo')
+          .ok('Ok')
+          .openFrom('#left')
       )
     }
       console.log('Post route successful: ', response);
